@@ -1,6 +1,66 @@
-body {
-    font-family: "Roboto Serif", serif;
+/* Reset basic styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+/* Global typography */
+body {
+    font-family: var(--font-family);
+    background-color: var(--light-bg);
+    color: var(--primary-text);
+}
+
+/* Global colors */
+:root {
+    /* Background colors */
+    --light-bg: #FFFFFF; /* Light background color */
+    --primary-bg: #F0DACD; /* Primary background color */
+    --secondary-bg: #F7F2EC; /* Secondary background color */
+    --accent-bg: #E1EDE9; /* Accent background color */
+
+    /* Text colors */
+    --primary-text: #29180F; /* Main text color */
+    --secondary-text: rgba(0, 0, 0, 1); /* Solid black */
+    --tertiary-text: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+    --quaternary-text: rgba(0, 0, 0, 0.82); /* Softer black */
+
+    /* Button Colors */
+    --button-buy: #89D3D1; /* Teal green, used for purchase buttons */
+    --button-default: #BF8B70; /* Warm brown, used for most buttons */
+    --button-text: #FFFFFF; /* White text for buttons */
+
+    /* Accent colors */
+    --border-highlight: #C9B079; /* Used for highlighted borders */
+
+    /* Font Family */
+    --font-family: "Roboto Serif", Georgia, "Times New Roman", serif;
+
+    /* Mobile-First Font Sizes */
+    --font-small: 12px;
+    --font-base: 14px;  
+    --font-medium: 16px;
+    --font-large: 20px;
+    --font-xlarge: 28px;
+    --font-xxlarge: 36px;
+
+    /* Font Weights */
+    --font-regular: 400;
+    --font-medium-weight: 500;
+    --font-semibold: 600;
+    --font-extrabold: 800;
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 768px) {
+    :root {
+        /* Tablet & Desktop Font Sizes */
+        --font-small: 14px;
+        --font-base: 16px;
+        --font-medium: 18px;
+        --font-large: 22px;
+        --font-xlarge: 40px;
+        --font-xxlarge: 48px;
+    }
 }
