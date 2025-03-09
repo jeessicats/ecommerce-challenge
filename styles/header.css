@@ -1,31 +1,71 @@
-/* Top bar styles */
+/* Mobile-First top-bar */
 #top-bar {
-    background-color: #F0DACD;
-    padding: 11px 67px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-}
-
-.container.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 40px;
-    padding: 0;
-    height: 18px;
-    margin: 0;
-}
-
-.container p {
-    font-size: 15px; 
-    font-weight: 400; 
-    line-height: 120%; 
-    letter-spacing: 0;
+    background-color: var(--color-bg-primary);
+    padding: 6px 30px; 
+    min-height: 40px; 
     text-align: center;
-    color: rgba(0, 0, 0, 0.82);
-    height: 18px; 
-    margin: 0;
+}
+
+/* Text separation with a bottom border */
+#top-bar p {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--color-border-highlight);
+    width: 100%;
+    max-width: 280px; /* Prevents the line from stretching too much */
+    margin: 0 auto; /* Centers the text and separator */
+}
+
+/* Removes the border from the last item */
+#top-bar p:last-child {
+    border-bottom: none;
+}
+
+
+/* Top-bar links */
+#top-bar a {
+    text-decoration: none; 
+    color: var(--quaternary-text); 
+    font-size: var(--font-size-small);
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for both desktop and mobile interactions */
+#top-bar a:hover,
+#top-bar a:active,
+#top-bar a:focus {
+    color: var(--color-button-primary);
+}
+
+/* Desktop adjustments */
+@media (min-width: 1024px) {
+    #top-bar {
+        padding: 11px 67px; 
+        height: 40px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+
+    #top-bar p {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        width: auto; /* Restores normal width */
+        text-align: left;
+        max-width: none; /* Removes max-width */
+        margin: 0; /* Resets margin */
+    }
+
+    #top-bar a {
+        font-size: var(--font-size-secondary);
+    }
+
+    .container.header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Ensure full width */
+    }
 }

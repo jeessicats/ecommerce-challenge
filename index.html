@@ -26,13 +26,52 @@
 </head>
 <body>
 
-    <!-- Top bar -->
-    <header id = "top-bar">
-        <section class="container header">
-            <p>Hai bisogno di aiuto?</p>  
-            <p>Ottieni subito uno sconto del 10%:Iscriviti alla newsletter</p>  
-            <p>Informazioni di consegna</p>  
-        </section>
+    <!-- Header and navigation -->
+    <header>
+        <!-- Top bar -->
+        <div id="top-bar">
+            <section class="container header">
+                <p class="support-link"><a href="#">Hai bisogno di aiuto?</a></p>  
+                <p class="promo-text"><a href="#">Ottieni subito uno sconto del 10%: Iscriviti alla newsletter</a></p>  
+                <p class="delivery-info"><a href="#">Informazioni di consegna</a></p>  
+            </section>
+        </div>
+
+        <!-- Navigation bar -->
+        <nav id="navbar">
+            <div class="container navbar">
+
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <img class="bear-logo" src="/assets/icons/logo.png" alt="TeddyShop logo">
+                    <p class="brand-name">Teddy Shop</p>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                 <button id="menu-toggle" aria-label="Open Menu">
+                    <img src="/assets/icons/menu_toggle.png" alt="Menu Icon">
+                </button>
+
+                <!-- Navigation menu (Hidden by default in Mobile) -->
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#" class="dropdown" aria-haspopup="true">Categorie</a></li>
+                    <li><a href="#">Novità</a></li>
+                    <li><a href="#">Marchi</a></li>
+                    <li><a href="#">Carte regalo</a></li>
+                    <li><a href="#">Chi siamo</a></li>
+                </ul>
+
+                <!-- Icons and Button -->
+                <div class="icons">
+                    <a href="#" class="icon" aria-label="Buscar"><img src="/assets/icons/search.png" alt="Search icon"></a>
+                    <a href="#" class="icon" aria-label="Perfil"><img src="/assets/icons/user.png" alt="User icon"></a>
+                    <a href="#" class="icon" aria-label="Favoritos"><img src="/assets/icons/heart.png" alt="Heart icon"></a>
+                    <a href="#" class="icon" aria-label="Carrinho"><img src="/assets/icons/shopping-bag.png" alt="Shopping Bag icon"></a>
+                    <button id="buy-button">Acquista</button>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <!-- Load compiled TypeScript script -->
