@@ -37,6 +37,28 @@
     color: var(--color-button-primary);
 }
 
+/* Navigation bar - container */
+#navbar {
+    background-color: var(--color-bg-light);
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo container */
+.logo {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+}
+
+/* Navigation bar */
+.bear-logo {
+    height: 50px;
+    display: block;
+    margin: 17px 0 17px 30px; /* (top right bottom left) - mobile */
+}
+
+
 /* Desktop adjustments */
 @media (min-width: 1024px) {
     #top-bar {
@@ -67,5 +89,88 @@
         justify-content: space-between;
         align-items: center;
         width: 100%; /* Ensure full width */
+    }
+
+    /* Navbar container */
+    #navbar {
+        background-color: var(--light-bg);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Flexbox for navbar container */
+    .container.navbar {
+        display: flex; /* Enables flex layout */
+        align-items: center; /* Aligns all elements in the same row */
+        justify-content: space-between;
+        width: 100%; /* Ensures full width */
+    }
+    
+    /* Logo */
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Logo image */
+    .bear-logo {
+        height: 57px;
+        margin-left: 64px;
+    }
+    
+    /* Navigation menu */
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 32px; /* Space between links */
+        padding: 0;
+        margin: 0; /* Centers the menu */
+        align-items: center;
+    }
+    
+    .nav-links li {
+        display: inline-block;
+    }
+    
+    .nav-links a {
+        text-decoration: none;
+        color: var(--color-text-primary);
+        font-size: 18px;
+        font-weight: var(--font-weight-medium);
+        transition: color 0.3s ease-in-out;
+    }
+    
+    .nav-links a:hover {
+        color: var(--color-button-primary);
+    }
+    
+    /* Icons and Button */
+    .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .icon img {
+        width: 24px;
+    }
+    
+    #buy-button {
+        background-color: var(--color-button-buy);
+        color: white;
+        font-size: 18px;
+        font-weight: var(--font-weight-medium);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 71px; 
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+        margin-left: 20px;
+        margin-right: 64px;
+    }
+
+    #menu-toggle {
+        display: none;
     }
 }
