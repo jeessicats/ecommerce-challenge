@@ -1,7 +1,8 @@
 /* Hero Section */
 #hero {
     width: 100%;  
-    min-height: 60vh; 
+    min-height: auto; 
+    height: auto;
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
@@ -16,7 +17,6 @@
     width: 100vw; 
     height: auto;
     max-width: 1440px;
-    max-height: 628px;
     object-fit: cover;
     position: relative;
 }
@@ -35,7 +35,7 @@
     left: 39%;
     transform: translateX(-40%);
     padding: 8px;
-    min-height: 42px;
+    min-height: 40px;
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-medium);
     text-align: center;
@@ -84,11 +84,11 @@
 /* Tablet: 768px to 1123px */
 @media (min-width: 768px) and (max-width: 1123px) {
     #hero {
-        min-height: 75vh;
+        min-height: auto;
     }
 
     #offer-button, #offer-text {
-        min-height: 50px;
+        min-height: 55px;
         border-radius: 0 0 50px 50px;
     }
 }
@@ -96,7 +96,7 @@
 /* Desktop: 1124px and up */
 @media (min-width: 1124px) {
     #hero {
-        min-height: 85vh;
+        min-height: auto;
         height: 100vh; 
     }
 
