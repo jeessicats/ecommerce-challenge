@@ -23,7 +23,27 @@
 
 #offer-text {
     display: none; /* Oculta o texto inicialmente */
-    position: relative;
+    position: absolute;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    background-color: var(--color-button-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    padding: 8px;
+    border: 2px solid #BAA370;
+    border-radius: 30px;
+    text-align: center;
+    width: 60vw;
+    top: 12%;
+    left: 39%; /* Mantém centralizado */
+    transform: translateX(-40%); /* Ajuste fino para centralização */
+    min-height: 40px;
+}
+
+/* Quando o texto estiver visível */
+#offer-text.show {
+    display: block;
+    max-height: 200px;
+    
 }
 
 #offer-button {
@@ -33,7 +53,7 @@
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-medium);
     background-color: var(--color-bg-light);
-    padding: 5px 5px;
+    padding: 8px;
     cursor: pointer;
     border-radius: 0 0 38px 38px;
     border: 2px solid #BAA370;
