@@ -19,12 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Scrip for offer button
 document.addEventListener("DOMContentLoaded", () => {
-    const offerButton = document.getElementById("offer-button") as HTMLDivElement | null;
-    const offerText = document.getElementById("offer-text") as HTMLDivElement | null;
+    const offerButton = document.getElementById("offer-button");
+    const offerText = document.getElementById("offer-text");
 
     if (offerButton && offerText) {
         offerButton.addEventListener("click", () => {
-            offerText.style.display = offerText.style.display === "none" ? "block" : "none";
+            offerButton.classList.add("hidden");
+            offerText.classList.add("show");
+        });
+
+        offerText.addEventListener("click", () => {
+            offerText.classList.remove("show");
+            offerButton.classList.remove("hidden");
         });
     }
 });
