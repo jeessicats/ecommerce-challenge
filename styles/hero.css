@@ -21,27 +21,38 @@
     position: relative;
 }
 
-#offer-text {
-    display: none; /* Oculta o texto inicialmente */
+/* Hidden Elements */
+.hero-button-image,
+#offer-text,
+#offer-button.hidden {
+    display: none;
+}
+
+#offer-text, 
+#offer-button {
     position: absolute;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-    background-color: var(--color-button-primary);
+    top: 0;
+    left: 39%;
+    transform: translateX(-40%);
+    padding: 8px;
+    min-height: 42px;
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-medium);
-    padding: 8px;
-    border: 2px solid #BAA370;
-    border-top: none;
-    border-radius: 0 0 38px 38px;
     text-align: center;
-    width: 70vw;
-    top: 0;
-    left: 39%; /* Mantém centralizado */
-    transform: translateX(-40%); /* Ajuste fino para centralização */
-    min-height: 40px;
+    line-height: 120%;
+    border: 2px solid #BAA370;
+    border-radius: 0 0 38px 38px;
     cursor: pointer;
 }
 
-/* Quando o texto estiver visível */
+#offer-text {
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    background-color: var(--color-button-primary);
+    color: var(--color-bg-light);
+    width: 70vw;
+}
+
+/* When the text is visible */
 #offer-text.show {
     display: flex;
     align-items: center;
@@ -55,32 +66,13 @@
     transition: all 0.3s ease-in-out;
 }
 
-
 #offer-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-medium);
     background-color: var(--color-bg-light);
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 0 0 38px 38px;
-    border: 2px solid #BAA370;
     border-top: none;
-    min-height: 40px;
-    position: absolute;
-    top: 0;
-    left: 39%;
-    transform: translateX(-40%);
-    flex-direction: column;
     width: 60vw; 
-    text-align: center;
-}
-
-/* Esconder o botão quando o texto estiver visível */
-#offer-button.hidden {
-    display: none;
 }
 
 #offer-button:hover {
@@ -89,7 +81,7 @@
     border-top: none;
 }
 
-/* Tablet: 768px até 1123px */
+/* Tablet: 768px to 1123px */
 @media (min-width: 768px) and (max-width: 1123px) {
     #hero {
         min-height: 75vh;
@@ -99,21 +91,37 @@
         min-height: 50px;
         border-radius: 0 0 50px 50px;
     }
-
 }
 
-/* Desktop: 1124px ou mais */
+/* Desktop: 1124px and up */
 @media (min-width: 1124px) {
     #hero {
         min-height: 85vh;
         height: 100vh; 
     }
 
-    #offer-text,
-    #offer-button {
-        display: block;
+    /* Button image for desktop */
+    .hero-button-image {
+        display: flex;
+        position: absolute;
+        top: 0;
+        height: 90px;
+        left: 39%; 
+        transform: translateX(-39%); 
+        z-index: 10;
         cursor: pointer;
     }
-    
+
+    /* When the button is hovered */
+    .hero-button-image:hover {
+        filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3)); 
+        transition: filter 0.3s ease-in-out;
+    }
+
+    /* hide the text and button */
+    #offer-text,
+    #offer-button {
+        display: none;
+    }
 }
 
