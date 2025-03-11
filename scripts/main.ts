@@ -17,4 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Scrip for offer button
+document.addEventListener("DOMContentLoaded", () => {
+    const offerButton = document.getElementById("offer-button") as HTMLDivElement | null;
+    const offerText = document.getElementById("offer-text") as HTMLDivElement | null;
+
+    if (offerButton && offerText) {
+        offerButton.addEventListener("click", () => {
+            offerText.style.display = offerText.style.display === "none" ? "block" : "none";
+        });
+    }
+});
 
