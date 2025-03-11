@@ -13,10 +13,101 @@
     font-weight: var(--font-weight-regular);
     text-align: center;
     color: var(--color-text-quaternary);
-    margin-top: 10px;
     line-height: 150%;
     max-width: 967px;
-    margin-left: auto; 
-    margin-right: auto;
+    margin: 10px auto 20px;
     padding: 0 20px;
+}
+
+/* Main container for the products */
+.collections-products {
+    display: flex;
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
+    padding: 2px 60px; 
+    gap: 0; /* Remove the gap between the cards */
+    scroll-padding: 20; /* Remove the padding between the cards */
+    scrollbar-width: none;
+    justify-content: start;
+    max-width: 100%;
+    gap: 30px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.collections-products::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card for each product */
+.collection-card {
+    background: var(--color-bg-light);
+    border-radius: 28px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 3px;
+    text-align: center;
+    overflow: hidden;
+    scroll-snap-align: center;
+    min-width: 255px;
+}
+
+/* Image for each product */
+.collection-card img {
+    width: 250px;
+    height: auto;
+    border-radius: 28px 28px 0 0;
+    margin-bottom: 10px;
+}
+
+/* Navigation buttons */
+.collections-navigation {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; 
+    margin: 10px auto; 
+}
+
+/* Styling for the buttons */
+.collections-navigation button {
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-button-primary);
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Hover effect for the buttons */
+.collections-navigation button:hover {
+    transform: scale(1.2); 
+}
+
+.collection-card h3 {
+    font-size: var(--font-size-body);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 10px 0;
+}
+
+.collection-card p {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-regular);
+    color: var(--color-text-tertiary);
+    margin: 10px 0;
+}
+
+/* Tablet: 768px to 1123px */
+@media (min-width: 768px) and (max-width: 1123px) {
+    
+}
+
+/* Desktop: 1124px and up */
+@media (min-width: 1124px) {
+    
 }

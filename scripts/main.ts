@@ -35,3 +35,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// Scrip for products button in collection
+const container = document.querySelector(".collections-products") as HTMLElement;
+const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement;
+const nextBtn = document.getElementById("nextBtn") as HTMLButtonElement;
+const card = document.querySelector(".collection-card") as HTMLElement;
+
+if (container && prevBtn && nextBtn && card) {
+    const cardWidth = card.offsetWidth + 16; // Largura do card + gap
+
+    prevBtn.addEventListener("click", () => {
+        container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+        container.scrollBy({ left: cardWidth, behavior: "smooth" });
+    });
+}
