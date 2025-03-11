@@ -1,95 +1,38 @@
 /* Hero Section */
 #hero {
-    width: 100vw;  
-    height: 100vh; 
+    width: 100%;  
+    min-height: 60vh; 
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
-    max-height: 900px;
-    position: relative;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Mantém os botões no topo */
+    justify-content: flex-start;
 }
 
 #hero img {
-    width: 100%; 
-    height: auto; 
-    object-fit: cover; 
-}
-
-/* Container dos botões */
-.hero-buttons {
-    position: absolute;
-    top: 0;
-    left: 37%;
-    transform: translateX(-43%);
-    display: flex;
-    flex-direction: row;
-}
-
-/* Link englobando os botões */
-.hero-button-wrapper {
+    width: 100vw; 
+    height: auto;
+    max-width: 1440px;
+    max-height: 628px;
+    object-fit: cover;
     position: relative;
-    display: flex;
-    text-decoration: none;
 }
 
-/* Estilo base dos botões */
-.hero-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--font-size-button);
-    font-weight: var(--font-weight-medium);  
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
-    border: 2px solid #BAA370;
-    white-space: nowrap;
-    border-radius: 0 0 55px 55px;
-    padding: 15px 30px;
-}
-
-/* Botão bege */
-.hero-button.beige {
-    background-color: #BF8B70;
-    color: var(--color-button-text);
-    width: clamp(300px, 40vw, 574px);
-    height: 77px;
-
-    position: relative;
-    z-index: 2;
-    margin-left: -90px; /* Move para a esquerda sobrepondo o branco */
-}
-
-/* Botão branco */
-.hero-button.white {
-    background-color: #FFFFFF;
-    color: var(--color-text-primary);
-    width: clamp(250px, 35vw, 467px);
-    height: 77px;
-}
-
-/* Adiciona efeito de hover */
-.hero-button-wrapper:hover .hero-button {
-    color: var(--color-text-secondary);
-    border: none;
-}
-
-
-@media (max-width: 1123px) { /* Para tablets e telas menores */
+/* Tablet: 768px até 1123px */
+@media (min-width: 768px) and (max-width: 1123px) {
     #hero {
-        max-height: 500px;
+        min-height: 75vh;
     }
-
-    
 }
 
-@media (max-width: 768px) { 
+/* Desktop: 1124px ou mais */
+@media (min-width: 1124px) {
     #hero {
-        max-height: 300px;
+        min-height: 85vh;
+        height: 100vh; 
     }
-
-    
 }
+
