@@ -1,26 +1,31 @@
 /* Mobile-First top-bar */
 #top-bar {
     background-color: var(--color-bg-primary);
-    padding: 6px 30px; 
-    min-height: 40px; 
-    text-align: center;
+    padding: 8px 15px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Text separation with a bottom border */
+.container.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Text separation */
 #top-bar p {
-    margin-bottom: 6px;
     padding-bottom: 6px;
     border-bottom: 1px solid var(--color-border-highlight);
-    width: 100%;
-    max-width: 280px; /* Prevents the line from stretching too much */
-    margin: 0 auto; /* Centers the text and separator */
+    text-align: center;
 }
 
 /* Removes the border from the last item */
 #top-bar p:last-child {
     border-bottom: none;
 }
-
 
 /* Top-bar links */
 #top-bar a {
@@ -40,44 +45,200 @@
 /* Navigation bar - container */
 #navbar {
     background-color: var(--color-bg-light);
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 15px;
     position: relative;
-    z-index: 1;
 }
 
-/* Logo container */
 .logo {
     display: flex;
-    align-items: center; 
-    text-decoration: none;
+    align-items: center;
 }
 
-/* Navigation bar */
+/* Logo image */
 .bear-logo {
-    height: 50px;
-    display: block;
-    margin: 17px 0 17px 30px; /* (top right bottom left) - mobile */
+    height: 40px;
 }
 
+/* Menu toggle button configuration */
+#menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+}
 
-/* Desktop adjustments */
-@media (min-width: 1024px) {
+#menu-toggle span {
+    width: 25px;
+    height: 4px;
+    background-color: var(--color-border-highlight);
+    border-radius: 10px;
+    transition: transform 0.3s, opacity 0.3s, width 0.3s;
+}
+
+/* When the menu is open */
+#menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+#menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+#menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5.5px, -5px);
+}
+
+/* Dropdown menu */
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-secondary);
+    list-style: none;
+    padding: 15px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+.nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-medium);
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Effect for the navigation links */
+.nav-links a:hover {
+    color: var(--color-border-highlight);
+}
+
+.nav-icons {
+    display: none; /* Esconde os ícones por padrão */
+    flex-direction: row; /* Alinha os ícones em linha */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Espaço entre os ícones */
+    width: 100%;
+    padding-top: 15px;
+}
+
+/* Exibir os ícones quando o menu for ativado */
+.nav-links.active .nav-icons {
+    display: flex;
+}
+
+/* Estilo dos ícones */
+.nav-icons .icon img {
+    height: 24px; /* Ajuste o tamanho conforme necessário */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito ao passar o mouse nos ícones */
+.nav-icons .icon:hover img {
+    transform: scale(1.1);
+}
+
+#buy-button {
+    padding: 8px 15px;
+    border: none;
+    font-size: var(--font-size-description);
+    background-color: var(--color-button-buy);
+    font-weight: var(--font-weight-medium);
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0;
+    transition: background 0.3s ease-in-out;
+}
+
+#buy-button:hover {
+    background-color: var(--color-button-primary);
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) and (max-width: 1123px) {
     #top-bar {
-        padding: 11px 67px; 
-        height: 40px; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: left;
+        height: 40px;
+        padding: 11px 20px;
+        box-sizing: border-box; 
     }
 
     #top-bar p {
-        margin-bottom: 0;
-        padding-bottom: 0;
+        padding: 0;
         border-bottom: none;
-        width: auto; /* Restores normal width */
-        text-align: left;
-        max-width: none; /* Removes max-width */
-        margin: 0; /* Resets margin */
+    }
+
+    #top-bar a {
+        font-size: var(--font-size-small);
+    }
+
+    .container.header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    #navbar {
+        padding: 21px 30px;
+    }
+
+    /* Ajuste no tamanho do logo */
+    .bear-logo {
+        height: 45px;
+    }
+
+    /* Reduz o espaço entre os links */
+    .nav-links {
+        gap: 20px;
+    }
+
+    /* Ajuste nos ícones */
+    .nav-icons {
+        gap: 12px;
+    }
+
+    .icon img {
+        height: 20px;
+    }
+
+    /* Ajustando o botão de compra */
+    #buy-button {
+        font-size: var(--font-size-body);
+        padding: 8px 20px;
+        border-radius: 71px; 
+        width: 131px;
+        height: 33px;
+    }
+}
+
+/* Media query for desktops */
+@media (min-width: 1124px) {
+    #top-bar {
+        height: 40px;
+        padding: 11px 67px;
+        box-sizing: border-box; /* Garante que padding esteja dentro da altura */
+    }
+
+    #top-bar p {
+        padding: 0;
+        border-bottom: none;
     }
 
     #top-bar a {
@@ -85,89 +246,76 @@
     }
 
     .container.header {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        width: 100%; /* Ensure full width */
     }
 
     /* Navbar container */
     #navbar {
-        background-color: var(--light-bg);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    /* Flexbox for navbar container */
-    .container.navbar {
-        display: flex; /* Enables flex layout */
-        align-items: center; /* Aligns all elements in the same row */
-        justify-content: space-between;
-        width: 100%; /* Ensures full width */
+        padding: 26.5px 64px;
     }
     
     /* Logo */
     .logo {
-        display: flex;
-        align-items: center;
+        margin: 0; /* Removes extra margin */
     }
     
     /* Logo image */
     .bear-logo {
         height: 57px;
-        margin-left: 64px;
+        padding: 0;
+    }
+
+    .navbar-header {
+        margin: 0;
+        padding: 0;
     }
     
     /* Navigation menu */
     .nav-links {
-        list-style: none;
         display: flex;
-        gap: 32px; /* Space between links */
+        position: static;
+        flex-wrap: nowrap; 
+        justify-content: flex-start;
+        width: auto;
+        max-width: 100%;
+        background: none;
+        box-shadow: none;
         padding: 0;
-        margin: 0; /* Centers the menu */
-        align-items: center;
+        gap: 30px; 
     }
     
     .nav-links li {
-        display: inline-block;
+        height: 27px;
+        white-space: nowrap;
     }
-    
+
     .nav-links a {
-        text-decoration: none;
-        color: var(--color-text-primary);
-        font-size: 18px;
-        font-weight: var(--font-weight-medium);
-        transition: color 0.3s ease-in-out;
-    }
-    
-    .nav-links a:hover {
-        color: var(--color-button-primary);
+        font-size: var(--font-size-button);
     }
     
     /* Icons and Button */
-    .icons {
+    .nav-icons {
         display: flex;
+        flex-direction: row;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
+        flex-wrap: nowrap;
+        height: 27px;
+        padding-top: 0;
+        padding-left: 0;
+        margin-left: 0;
     }
     
     .icon img {
-        width: 24px;
+        height: 24px;
     }
     
     #buy-button {
-        background-color: var(--color-button-buy);
-        color: white;
-        font-size: 18px;
-        font-weight: var(--font-weight-medium);
-        padding: 10px 20px;
-        border: none;
+        font-size: var(--font-size-body);
+        padding: 8px 20px;
         border-radius: 71px; 
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;
-        margin-left: 20px;
-        margin-right: 64px;
+        min-width: 100px;
     }
 
     #menu-toggle {

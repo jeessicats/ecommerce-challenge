@@ -7,11 +7,15 @@
 
 /* Global typography */
 body {
+    width: 100%;
+    justify-content: center;
     font-family: var(--font-family);
     background-color: var(--light-bg);
     color: var(--primary-text);
     position: relative; /* Ensures elements inside can be positioned correctly */
     z-index: 0; /* Keeps it at the lowest layer */
+    
+
 }
 
 /* Global colors */
