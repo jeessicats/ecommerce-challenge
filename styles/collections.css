@@ -61,7 +61,6 @@
 
 /* Image for each product */
 .collection-card img {
-    width: 100%;
     width: 250px;
     height: auto;
     border-radius: 28px 28px 0 0;
