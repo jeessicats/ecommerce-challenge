@@ -52,3 +52,29 @@ if (container && prevBtn && nextBtn && card) {
         container.scrollBy({ left: cardWidth, behavior: "smooth" });
     });
 }
+
+// Navigation Buttons section Products
+document.addEventListener("DOMContentLoaded", () => {
+    const productContainer = document.querySelector(".spring-products") as HTMLElement;
+    const prevButton = document.querySelector(".spring-nav.prev") as HTMLButtonElement;
+    const nextButton = document.querySelector(".spring-nav.next") as HTMLButtonElement;
+
+    // Amount of pixels to scroll
+    const scrollAmount = 300;
+
+    // Function to scroll to the left
+    prevButton.addEventListener("click", () => {
+        productContainer.scrollBy({
+            left: -scrollAmount,
+            behavior: "smooth" // Faz a rolagem ser suave
+        });
+    });
+
+    // Function to scroll to the right
+    nextButton.addEventListener("click", () => {
+        productContainer.scrollBy({
+            left: scrollAmount,
+            behavior: "smooth"
+        });
+    });
+});
