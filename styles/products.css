@@ -1,0 +1,31 @@
+/* Spring Collection Header */
+.spring-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    height: 50px;
+}
+
+.spring-icon {
+    height: 28px;
+    width: auto;
+}
+
+.spring-header h2 {
+    font-size: var(--font-size-highlight);
+    font-style: italic;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    line-height: 120%;
+    background-color: var(color-bg-primary);
+    border: 3px solid #C9B079;
+    border-radius: 62px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
