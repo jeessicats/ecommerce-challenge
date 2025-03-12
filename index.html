@@ -69,10 +69,10 @@
 
                 <!-- Action icons -->
                 <li class="nav-icons">
-                    <a href="#" class="icon" aria-label="Search"><img src="/assets/icons/search.png" alt="Search icon"></a>
-                    <a href="#" class="icon" aria-label="Profile"><img src="/assets/icons/user.png" alt="User icon"></a>
-                    <a href="#" class="icon" aria-label="Favorites"><img src="/assets/icons/heart.png" alt="Heart icon"></a>
-                    <a href="#" class="icon" aria-label="Shopping Cart"><img src="/assets/icons/shopping-bag.png" alt="Shopping Bag icon"></a>
+                    <a href="#" class="icon" aria-label="Search"><img src="/assets/icons/search.png"></a>
+                    <a href="#" class="icon" aria-label="Profile"><img src="/assets/icons/user.png"></a>
+                    <a href="#" class="icon" aria-label="Favorites"><img src="/assets/icons/heart.png"></a>
+                    <a href="#" class="icon" aria-label="Shopping Cart"><img src="/assets/icons/shopping-bag.png"></a>
                 </li>
             </ul>
 
@@ -136,7 +136,6 @@
         </section>
     </section>
     
-
     <!-- Spring Collection Section -->
     <section id="spring-collection">
         
@@ -149,47 +148,90 @@
         </header>
 
         <!-- Product Grid -->
-        <section class="spring-products" role="list">
-            <article class="spring-card" role="listitem">
-                <div class="product-container " role="img">
-                    <img src="/assets/images/products/teddy.png" alt="Teddy - 10.5 Orso">
-                </div>
-                <h3>Teddy - 10.5 Orso</h3>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <p class="price">$24</p>
-            </article>
+        <section class="spring-products">   
+            
+            <!-- Navigation button -->
+            <button class="spring-nav prev" aria-label="Previous">&#10094;</button>
+            
+            <div class="cards-container"> 
 
-            <article class="spring-card" role="listitem">
-                <div class="product-container " role="img">
-                    <img src="/assets/images/products/trixy.png" alt="Trixy - 8.5 Tricerapoto">
-                </div>
-                <h3>Trixy - 8.5 Tricerapoto</h3>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <p class="price">$30</p>
-            </article>
+                <article class="spring-card" >
 
-            <article class="spring-card" role="listitem">
-                <div class="product-container " role="img">
-                    <img src="/assets/images/products/bunny.png" alt="Bunny - 10.5 Coniglio">
-                </div>
-                <h3>Bunny - 10.5 Coniglio</h3>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <p class="price">$25</p>
-            </article>
-
-            <article class="spring-card" role="listitem">
-                <div class="product-container " role="img">
-                    <img src="/assets/images/products/gigi.png" alt="Gigi - 12.5 Giraffa">
-                </div>
-                <h3>Gigi - 12.5 Giraffa</h3>
-                <p class="rating">⭐⭐⭐⭐☆</p>
-                <p class="price">$30</p>
-            </article>
+                    <!-- Product Image -->
+                    <div class="product-container">
+                        <img src="/assets/images/products/teddy.png" alt="Teddy - 10.5 Orso">
+                    </div>
+    
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h3>Teddy - 10.5 Orso</h3>
+                        <p class="rating">
+                            <img src="/assets/icons/rating.png" alt="3.5 stars">
+                        </p>
+                        <p class="price">$24</p>
+                    </div>
+                    
+                </article>
+    
+                <article class="spring-card" >
+    
+                    <!-- Product Image -->
+                    <div class="product-container ">
+                        <img src="/assets/images/products/trixy.png" alt="Trixy - 8.5 Tricerapoto">
+                    </div>
+    
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h3>Trixy - 8.5 Tricerapoto</h3>
+                        <p class="rating">
+                            <img src="/assets/icons/rating.png" alt="3.5 stars">
+                        </p>
+                        <p class="price">$30</p>
+                    </div>
+                </article>
+    
+                <article class="spring-card" >
+    
+                    <!-- Product Image -->
+                    <div class="product-container ">
+                        <img src="/assets/images/products/bunny.png" alt="Bunny - 10.5 Coniglio">
+                    </div>
+    
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h3>Bunny - 10.5 Coniglio</h3>
+                        <p class="rating">
+                            <img src="/assets/icons/rating.png" alt="3.5 stars">
+                        </p>
+                        <p class="price">$25</p>
+                    </div>
+                </article>
+    
+                <article class="spring-card" ">
+    
+                    <!-- Product Image -->
+                    <div class="product-container ">
+                        <img src="/assets/images/products/gigi.png" alt="Gigi - 12.5 Giraffa">
+                    </div>
+    
+                    <!-- Product Info -->
+                    <div class="product-info">
+                        <h3>Gigi - 12.5 Giraffa</h3>
+                        <p class="rating">
+                            <img src="/assets/icons/rating.png" alt="3.5 stars">
+                        </p>
+                        <p class="price">$30</p>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Navigation button -->
+            <button class="spring-nav next" aria-label="Next">&#10095;</button>
         </section>
 
         <!-- Call to Action Button -->
-        <div class="spring-cta">
-            <button id="explore-spring">Esplora adesso</button>
+        <div class="cta-button">
+            <button id="explore-button">Esplora adesso</button>
         </div>
 
     </section>

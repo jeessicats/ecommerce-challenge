@@ -1,30 +1,36 @@
+#spring-collection {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-secondary);
+}
+
 /* Spring Collection Header */
 .spring-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin: 20px 0px;
     height: 50px;
 }
 
+/* Spring Icon */
 .spring-icon {
     height: 28px;
     width: auto;
 }
 
+/* Spring Spring Title */
 .spring-header h2 {
     font-size: var(--font-size-highlight);
     font-style: italic;
     font-weight: bold;
     color: var(--color-text-primary);
     line-height: 120%;
-    background-color: var(color-bg-primary);
+    background-color: var(--color-bg-light);
     border: 3px solid #C9B079;
     border-radius: 62px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 5px 15px;
-    text-align: center;
     display: flex;
     align-items: center;
     gap: 2px;
@@ -36,9 +42,54 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    gap: 15px;
-    padding: 10px 14px;
-    scrollbar-width: none; 
+    gap: 25px;
+    scrollbar-width: none;
+    padding: 20px 60px;
+    justify-content: start; 
+    position: relative;
+}
+
+/* Container for the products */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 25px;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Navigation Arrows */
+.spring-nav {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(191, 139, 112, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Left Arrow */
+.spring-nav.prev {
+    left: 10px;
+}
+
+/* Right Arrow */
+.spring-nav.next {
+    right: 10px;
+}
+
+/* Hover Efect arrow */
+.spring-nav:hover {
+    transform: scale(1.2); 
 }
 
 /* Hide scrollbar for Chrome, Safari and Edge */
@@ -46,23 +97,22 @@
     display: none;
 }
 
-/* Cada Card de Produto */
+/* Card for each product */
 .spring-card {
     background: var(--color-bg-light);
     border-radius: 28px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 3px;
     text-align: center;
-    overflow: hidden;
     scroll-snap-align: center;
-    flex: 0 0 75%; /* Mantém um tamanho consistente para mobile */
-    max-width: 190px;
+    min-width: 190px;
 }
 
+/* Container for the products */
 .product-container {
     background-color: var(--color-bg-secondary);
     border-radius: 28px 28px 0 0;
-    height: 180px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
@@ -70,19 +120,176 @@
     align-items: center;
 }
 
-/* Imagem do Produto */
+/* Image for each product */
 .spring-card img {
-    max-width: 150px;
+    width: 140px;
     height: auto;
     border-radius: 28px 28px 0 0;
     margin-bottom: 10px;
-    background-color: var(color-bg-secondary);
 }
 
-/* Nome do Produto */
+/* Product Information */
+.product-info {
+    text-align: center;
+    padding: 5px 10px;
+}
+
+/* Product Name */
 .spring-card h3 {
-    font-size: var(--font-size-body);
+    font-size: var(--font-size-description);
     font-weight: bold;
     color: var(--color-text-primary);
     margin-bottom: 5px;
+    height: 15px;
+}
+
+/* Rating */
+.rating img {
+    width: 80px; 
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    border-radius: 0;
+    padding: 1px 0 6px 0;
+}
+
+/* Price */
+.price {
+    font-size: var(--font-size-description);
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin-bottom: 7px;
+}
+
+/* Button */
+.cta-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Explore Button */
+#explore-button {
+    width: 150px;
+    height: 35px;
+    background-color: var(--color-button-primary);
+    color: #FFFFFF;
+    font-size: var(--font-size-description);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    border: none;
+    border-radius: 29px;
+    padding: 8px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover effect */
+#explore-button:hover {
+    background-color: rgba(191, 139, 112, 0.9);
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Click effect */
+#explore-button:active {
+    transform: scale(0.95);
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) and (max-width: 1123px) {
+
+    .spring-card {
+        min-width: 200px;
+        height: 320px;
+    }
+
+    .product-container {
+        height: 210px;
+    }
+
+    .spring-card img {
+        width: 180px;
+        height: auto;
+    }
+
+    .spring-card h3 {
+        font-size: var(--font-size-secondary);
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .price {
+        font-size: var(--font-size-secondary);
+        margin-bottom: 10px;        
+    }
+
+    .rating img {
+        width: 85px; 
+    }
+
+    #explore-button {
+        width: 200px;
+        height: 42px;
+        font-size: var(--font-size-secondary);
+    }
+}
+
+/* Media query for desktops */
+@media (min-width: 1124px) {
+    .spring-nav {
+        display: none;
+    }
+
+    /* Define layout de grid no desktop */
+    .cards-container {
+        gap: 50px;
+    }
+
+    /* Cards dos produtos */
+    .spring-card {
+        min-width: 250px;
+        max-width: 300px;
+    }
+
+    /* Container da imagem do produto */
+    .product-container {
+        height: 230px;
+        max-width: 320px;
+    }
+
+    /* Imagem do produto */
+    .spring-card img {
+        width: 200px;
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* Nome do produto */
+    .spring-card h3 {
+        font-size: var(--font-size-highlight);
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: fit-content;
+    }
+
+    /* Estilização da classificação */
+    .rating img {
+        width: 100px; 
+    }
+
+    /* Preço do produto */
+    .price {
+        font-size: var(--font-size-highlight);
+        margin-bottom: 10px;        
+    }
+
+    #explore-button {
+        width: 237px;
+        height: 48px;
+        font-size: var(--font-size-button);
+    }
 }

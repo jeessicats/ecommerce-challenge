@@ -1,3 +1,9 @@
+#teddyshop-collections {
+    background: var(--color-bg-secondary);
+    display: flex;
+    flex-direction: column;
+}
+
 .collections-header h2 {
     font-size: var(--font-size-featured);
     font-weight: bold; 
@@ -25,13 +31,13 @@
     overflow-x: auto; 
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch; 
-    padding: 2px 60px; 
-    gap: 0; /* Remove the gap between the cards */
     scroll-padding: 20px;
     scrollbar-width: none;
     justify-content: start;
     max-width: 100%;
-    gap: 30px;
+    gap: 50px;
+    padding: 20px 60px;
+
 }
 
 /* Hide scrollbar for Chrome, Safari and Edge */
@@ -42,14 +48,15 @@
 /* Card for each product */
 .collection-card {
     background: var(--color-bg-light);
-    border-radius: 28px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
     padding: 3px;
     text-align: center;
-    overflow: hidden;
     scroll-snap-align: center;
     min-width: 255px;
     flex: 0 0;
+    overflow: visible; 
+    border-radius: 28px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
 }
 
 /* Image for each product */
@@ -66,14 +73,14 @@
     display: flex;
     justify-content: center; 
     gap: 50px; 
-    margin: 10px auto; 
+    margin: 0; 
 }
 
 /* Styling for the buttons */
 .collections-navigation button {
     width: 30px;
     height: 30px;
-    background-color: var(--color-button-primary);
+    background-color: rgba(191, 139, 112, 0.5);
     color: white;
     border: none;
     border-radius: 50%; 
@@ -104,8 +111,13 @@
     margin: 10px 0;
 }
 
+/* Tablet screens */
+@media (min-width: 768px) and (max-width: 1123px) {
+
+}
+
 /* Large screens */
-@media (min-width: 920px) {
+@media (min-width: 1124px) {
     .collections-navigation {
         display: none;
     }
@@ -114,7 +126,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* 3 cards lado a lado */
         gap: 24px;
-        padding: 0 clamp(67px, 5vw, 120px);
+        padding: 20 clamp(67px, 5vw, 120px);
         justify-content: center;
         margin: 0 auto;
         max-width: 1400px;
