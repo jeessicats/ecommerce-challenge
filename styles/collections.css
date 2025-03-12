@@ -132,4 +132,23 @@
         width: 100%;
         max-width: 390px;
     }
+
+    .collections-header h2 {
+        font-size: var(--font-size-heading-lg);
+        margin-top: 50px;
+    }
+
+    .collections-header p {
+        font-size: var(--font-size-highlight);
+        max-width: 1000px;
+        margin-bottom: 39px;
+    }
+
+    .collection-card h3 {
+        font-size: var(--font-size-featured);
+    }
+
+    .collection-card p {
+        font-size: var(--font-size-body);
+    }
 }
