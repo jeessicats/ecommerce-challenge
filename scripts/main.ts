@@ -78,3 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Dots Features Section navigation
+const dots = document.querySelectorAll(".dot");
+
+let currentPage: number = 0; 
+const totalPages: number = dots.length; 
+
+// Function to update the active dot
+function updateDots(index: number): void {
+    currentPage = index;
+
+    // Remove a classe ativa de todos os dots
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentPage].classList.add("active");
+}
+
+// Add event listener to each dot
+dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+        updateDots(index);
+    });
+});
+
+// Initialize the dots
+updateDots(0);
