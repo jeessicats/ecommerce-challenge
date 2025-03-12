@@ -62,7 +62,7 @@
 /* Container for the navigation arrows */
 .spring-navigation {
     position: absolute;  /* Fixado dentro do spring-collection */
-    top: 85.5%;
+    top: 60%;
     left: 0;
     width: 100%;
     max-width: 1440px;
@@ -203,6 +203,7 @@
     justify-content: center;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 /* Hover effect */
