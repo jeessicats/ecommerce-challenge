@@ -2,9 +2,8 @@
     background-color: var(--color-bg-accent);    
     overflow: hidden;
     width: 100%;
-    max-width: 100%; /* Ajustável no mobile */
     margin: 0 auto;
-    position: relative;
+    position: center;
 }
 
 /* Features Header */
@@ -13,8 +12,7 @@
     justify-content: center;
     align-items: center;
     gap: 120px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 38px 0 25px;
 }
 
 /* Features Title */
@@ -22,6 +20,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    height: 34px;
 }
 
 .pink-flower {
@@ -29,7 +28,7 @@
     height: auto;
 }
 
-/* Slider Wrapper */
+/* Slider */
 .features-slider {
     overflow: hidden;
     width: 100%;
@@ -38,19 +37,18 @@
     position: relative;
 }
 
-/* Container dos slides */
+/* Slider Container */
 .features-container {
     display: flex;
     transition: transform 0.6s ease-in-out;
     width: 300%;
-    gap: 10px; /* Reduzindo para evitar sobreposição */
-    padding: 0 10px;
+    padding: 0;
+    margin: 0;
 }
 
-/* Grupos de cards */
+/* Card Slide */
 .feature-slide {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -62,13 +60,12 @@
     background-color: var(--color-bg-light);
     border: 3px solid var(--color-border-highlight);
     border-radius: 31px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 15px;
     text-align: center;
     width: 90%; 
-    max-width: 270px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    max-width: 350px;
+    margin: 0 auto 10px;
 }
 
 /* Icon card */
@@ -80,7 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25); 
     margin: 0 auto 10px;
 }
 
@@ -93,10 +90,9 @@
 .quality-icon img { width: 30px; }
 .service-icon img { width: 40px; }
 
-
 /* Card Title */
 .feature-card h3 {
-    font-size: var(--font-size-body);
+    font-size: var(--font-size-subtitle);
     font-weight: bold;
     color: var(--color-text-primary);
     margin-bottom: 10px;
@@ -104,38 +100,37 @@
 
 /* Card Description */
 .feature-card p {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-description);
     color: var(--color-text-tertiary);
     line-height: 150%;
 }
 
-/* Estilização dos pontos de navegação */
+/* Dots Navigation */
 .features-dots {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    gap: 8px;
+    margin: 20px 0;
+    gap: 7px;
 }
 
-/* Cada ponto (dot) */
+/* Every dot */
 .dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-bg-light);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Dot ativo (selecionado) */
+/* Active Dot */
 .dot.active {
-    background-color: rgba(0, 0, 0, 0.8);
-    transform: scale(1.2);
+    background-color: #3A2215;
+    transform: scale(1.1);
 }
 
 /* Tablet Styles */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1123px) {
 
     .features-dots .dot:nth-child(n+3) {
         display: none;
@@ -143,96 +138,80 @@
 
     .features-slider {
         max-width: 1000px;
-        padding: 0 20px;
-        overflow: hidden;
+        padding: 0 10px;
     }
 
     .features-container {
         width: 200%; 
-        display: flex;
-        transition: transform 0.6s ease-in-out;
-        padding: 0;
-        justify-content: flex-start;
     }
 
     .feature-slide {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
         align-items: stretch;
-        width: 50%; 
         flex: 0 0 50%;
-        gap: 20px;
-        padding: 20px 20px;
+        width: 50%; 
+        min-width: 700px; 
+        max-width: 1100px;
     }
 
-    /* Ajustando o tamanho dos cards */
+    /* Card Styles */
     .feature-card {
-        width: 350px; /* Permitindo que os cards fiquem maiores */
+        padding: 10px 10px;
+        margin: 10px 25px;
+    }
+
+    .features-header {
+        margin: 45px 10px 10px 20px;
     }
 
     .features-header h2 {
         font-size: 31px;
         gap: 20px;
+        height: 40px;
     }
 
     .pink-flower {
         width: 60px;
     }
 
-    /* Card Title */
-    .feature-card h3 {
-        font-size: var(--font-size-highlight);
-    }
-
-    /* Card Description */
-    .feature-card p {
-        font-size: var(--font-size-description);
-    }
-
     .features-dots {
-        margin-top: 20px;
-        margin-bottom: 25px;
+        margin: 20px 0 25px;
     }
 }
 
 /* Desktop Styles */
 @media (min-width: 1124px) {
 
-    .feature-card {
-        max-width: 370px;
-    }
-
     .features-slider {
-        max-width: 1300px; /* Define um limite para evitar esticamentos */
-        padding: 0 30px;
-        overflow: hidden; /* Evita que os slides fiquem visíveis fora da área */
-        position: relative;
-        margin: 0 auto; /* Garante que nada extrapole */
+        max-width: 1440px; 
+        padding: 0 20px;
     }
 
     .features-container {
-        display: flex;
-        width: 200%; /* Como temos 2 slides, ele ocupa o dobro da largura */
-        transition: transform 0.6s ease-in-out;
-        padding: 0;
-        justify-content: flex-start; /* Garante alinhamento correto */
-        gap: 0;
+        width: 200%; 
+        justify-content: center; 
     }
 
-    .feature-slide .feature-slide {
-        display: flex;
+    .feature-slide {
         justify-content: space-between;
         align-items: stretch;
-        width: 100%;
-        flex: 0 0 100%;
-        gap: 20px;
+        min-width: 1000px; 
+        max-width: 1300px;
+        width: 100%; 
+        flex: 0 0 50%;
+        gap: 48px; 
+        padding: 0 24px; 
+        margin: 0 auto; 
+    }
+
+    .features-header {
+        margin: 63px 10px 40px 20px;
     }
     
 
     .features-header h2 {
         font-size: var(--font-size-heading-lg);
         gap: 20px;
+        height: 58px;
     }
 
     .pink-flower {
@@ -240,15 +219,23 @@
     }
 
     .feature-card {
-        flex: 1 1 calc(33.33% - 25px); /* Cada card ocupa 1/3 do slide */
-        max-width: calc(33.33% - 25px);
-        min-width: 0;
-        margin: 0;
+        box-sizing: border-box;
+        max-width: 375px;
+        min-height: 198px;
+        padding: 15px;
+    }
+
+    /* Icon Sizes */
+    .shipping-icon img { width: 42px; }
+    .quality-icon img { width: 33px; }
+    .service-icon img { width: 45px; }
+
+    .feature-icon {
+        width: 53px; 
+        height: 53px;
     }
 
     .features-dots {
-        margin-top: 35px;
-        margin-bottom: 28px;
+        margin: 21px 0 22px;
     }
-    
 }
