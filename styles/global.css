@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;700&display=swap');
+
+
 /* Reset basic styles */
 * {
     margin: 0;
@@ -41,7 +44,7 @@ body {
     --color-border-highlight: #C9B079; /* Used for highlighted borders */
 
     /* Font Family */
-    --font-family: "Roboto Serif", Georgia, "Times New Roman", serif;
+    --font-family: 'Roboto Serif', serif;
 
     /* Small Text (Details, footers, captions) */
     --font-size-caption: 12px;  /* Tiny labels, icons, minor details */

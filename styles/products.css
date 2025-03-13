@@ -23,7 +23,8 @@
 .spring-header h2 {
     font-size: var(--font-size-highlight);
     font-style: italic;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0%;
     color: var(--color-text-primary);
     line-height: 120%;
     background-color: var(--color-bg-light);
@@ -44,7 +45,7 @@
     -webkit-overflow-scrolling: touch;
     gap: 25px;
     scrollbar-width: none;
-    padding: 20px 60px;
+    padding: 20px 40px;
     justify-content: start; 
     position: relative;
 }
@@ -53,7 +54,7 @@
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 25px;
+    gap: 20px;
     justify-content: center;
     max-width: 1440px;
     margin: 0 auto;
@@ -143,6 +144,8 @@
     height: auto;
     border-radius: 28px 28px 0 0;
     margin-bottom: 10px;
+    display: block;
+    margin-top: auto;
 }
 
 /* Product Information */
@@ -157,7 +160,6 @@
     font-weight: bold;
     color: var(--color-text-primary);
     margin-bottom: 5px;
-    height: 15px;
 }
 
 /* Rating */
@@ -192,24 +194,25 @@
     background-color: var(--color-button-primary);
     color: #FFFFFF;
     font-size: var(--font-size-description);
-    font-weight: var(--font-weight-medium);
+    font-weight: semi-bold;
+    line-height: 150%;
     text-align: center;
-    border: none;
+    border: 2px solid #FFFFFF;
     border-radius: 29px;
     padding: 8px 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2.5px 0px #7C7A77;
     transition: all 0.3s ease-in-out;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Hover effect */
 #explore-button:hover {
     background-color: rgba(191, 139, 112, 0.9);
-    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 /* Click effect */
@@ -230,7 +233,7 @@
     }
 
     .spring-card img {
-        width: 180px;
+        width: 170px;
         height: auto;
     }
 
@@ -281,7 +284,7 @@
 
     /* Imagem do produto */
     .spring-card img {
-        width: 200px;
+        width: 210px;
         height: auto;
         max-width: 100%;
     }

@@ -96,6 +96,7 @@
     font-weight: bold;
     color: var(--color-text-primary);
     margin-bottom: 10px;
+    line-height: 140%;
 }
 
 /* Card Description */
@@ -204,7 +205,7 @@
     }
 
     .features-header {
-        margin: 63px 10px 40px 20px;
+        margin: 60px 10px 40px 20px;
     }
     
 
