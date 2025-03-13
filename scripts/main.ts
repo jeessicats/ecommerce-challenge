@@ -80,12 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Dots Features Section navigation
+
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".features-container") as HTMLElement;
     const slides = document.querySelectorAll(".feature-slide");
     const cards = document.querySelectorAll(".feature-card");
     const dots = document.querySelectorAll(".dot") as NodeListOf<HTMLElement>;
     let currentIndex = 0;
+
+    
+    
 
     function isMobile(): boolean {
         return window.innerWidth < 768;
@@ -96,8 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function getTotalSlides(): number {
-        return isMobile() ? Math.ceil(cards.length / getSlidesPerView()) : slides.length;
+        return isMobile() 
+            ? Math.ceil(document.querySelectorAll('.feature-card').length / getSlidesPerView()) 
+            : document.querySelectorAll('.feature-slide').length;
     }
+    
 
     function identifySlides() {
         console.log(`Tamanho da tela: ${window.innerWidth}px`);
