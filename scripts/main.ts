@@ -80,25 +80,68 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Dots Features Section navigation
-const featuresContainer = document.querySelector('.features-container') as HTMLElement;
-const dots = document.querySelectorAll('.dot');
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".features-container") as HTMLElement;
+    const slides = document.querySelectorAll(".feature-slide");
+    const cards = document.querySelectorAll(".feature-card");
+    const dots = document.querySelectorAll(".dot") as NodeListOf<HTMLElement>;
+    let currentIndex = 0;
 
-let currentIndex = 0;
+    function isMobile(): boolean {
+        return window.innerWidth < 768;
+    }
 
-function updateSlider(index: number) {
-    // Move o container para a posição correta
-    featuresContainer.style.transform = `translateX(-${index * 100}%)`;
+    function getSlidesPerView(): number {
+        return isMobile() ? 1 : 3;
+    }
 
-    // Atualiza os dots
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
+    function getTotalSlides(): number {
+        return isMobile() ? Math.ceil(cards.length / getSlidesPerView()) : slides.length;
+    }
 
-    currentIndex = index;
-}
+    function identifySlides() {
+        console.log(`Tamanho da tela: ${window.innerWidth}px`);
+        console.log(`Slides por exibição: ${getSlidesPerView()}`);
+        console.log(`Total de slides necessários: ${getTotalSlides()}`);
+    }
 
-// Adiciona evento de clique nos dots
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        updateSlider(index);
+    function updateSlidePosition() {
+        const totalSlides = getTotalSlides();
+        currentIndex = Math.max(0, Math.min(currentIndex, totalSlides - 1));
+        
+        let movePercentage;
+        if (isMobile()) {
+            let containerWidth = window.innerWidth < 1124 ? 200 : 300;
+            movePercentage = containerWidth / totalSlides;
+        } else {
+            movePercentage = 100 / totalSlides;
+        }
+        
+        let offset = -(currentIndex * movePercentage);
+        container.style.transform = `translateX(${offset}%)`;
+
+        updateDots(totalSlides);
+    }
+
+    function updateDots(totalSlides: number) {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentIndex);
+            dot.style.display = index < totalSlides ? "inline-block" : "none";
+        });
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            currentIndex = index;
+            updateSlidePosition();
+        });
     });
+
+    window.addEventListener("resize", () => {
+        identifySlides();
+        updateSlidePosition();
+    });
+
+    identifySlides();
+    updateSlidePosition();
 });

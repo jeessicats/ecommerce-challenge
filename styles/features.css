@@ -135,6 +135,10 @@
 /* Tablet Styles */
 @media (min-width: 768px) {
 
+    .features-dots .dot:nth-child(n+3) {
+        display: none;
+    }
+
     .features-slider {
         max-width: 1000px;
         padding: 0 20px;
@@ -193,7 +197,7 @@
     }
 
     .features-slider {
-        max-width: 1200px;
+        max-width: 1300px;
         padding: 0 30px;
         overflow: hidden; /* Garante que nada extrapole */
     }
