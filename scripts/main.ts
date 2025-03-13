@@ -80,26 +80,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Dots Features Section navigation
-const dots = document.querySelectorAll(".dot");
+const featuresContainer = document.querySelector('.features-container') as HTMLElement;
+const dots = document.querySelectorAll('.dot');
 
-let currentPage: number = 0; 
-const totalPages: number = dots.length; 
+let currentIndex = 0;
 
-// Function to update the active dot
-function updateDots(index: number): void {
-    currentPage = index;
+function updateSlider(index: number) {
+    // Move o container para a posição correta
+    featuresContainer.style.transform = `translateX(-${index * 100}%)`;
 
-    // Remove a classe ativa de todos os dots
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[currentPage].classList.add("active");
+    // Atualiza os dots
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    currentIndex = index;
 }
 
-// Add event listener to each dot
+// Adiciona evento de clique nos dots
 dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-        updateDots(index);
+    dot.addEventListener('click', () => {
+        updateSlider(index);
     });
 });
-
-// Initialize the dots
-updateDots(0);

@@ -1,10 +1,10 @@
 #features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color-bg-accent);
-    text-align: center;
-    padding: 40px 20px;
+    background-color: var(--color-bg-accent);    
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%; /* Ajustável no mobile */
+    margin: 0 auto;
+    position: relative;
 }
 
 /* Features Header */
@@ -12,8 +12,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 120px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 /* Features Title */
@@ -28,15 +29,32 @@
     height: auto;
 }
 
-/* Cards Container */
+/* Slider Wrapper */
+.features-slider {
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Container dos slides */
 .features-container {
     display: flex;
-    flex-direction: column;
+    transition: transform 0.6s ease-in-out;
+    width: 300%;
+    gap: 10px; /* Reduzindo para evitar sobreposição */
+    padding: 0 10px;
+}
+
+/* Grupos de cards */
+.feature-slide {
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
     width: 100%;
-    max-width: 400px; 
-    margin: 0 auto;
+    flex: 0 0 100%;
 }
 
 /* Cards Styles */
@@ -47,8 +65,9 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: center;
-    width: 100%;
-    max-width: 350px;
+    width: 90%; 
+    max-width: 270px;
+    margin: 0 auto;
 }
 
 /* Icon card */
@@ -89,22 +108,61 @@
     line-height: 150%;
 }
 
+/* Estilização dos pontos de navegação */
+.features-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 8px;
+}
+
+/* Cada ponto (dot) */
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Dot ativo (selecionado) */
+.dot.active {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.2);
+}
+
 /* Tablet Styles */
 @media (min-width: 768px) {
-    /* Centralizando o container dos cards */
-    .features-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto;
-        gap: 20px;
-        justify-content: center;
-        max-width: 700px;
-        margin: 0 auto;
+
+    .features-slider {
+        max-width: 1000px;
+        padding: 0 20px;
+        overflow: hidden;
     }
 
-    .feature-card:nth-child(3) {
-        grid-column: span 2;
-        justify-self: center;
+    .features-container {
+        width: 200%; 
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    .feature-slide {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        width: 50%; 
+        flex: 0 0 50%;
+        gap: 20px;
+        padding: 20px 20px;
+    }
+
+    /* Ajustando o tamanho dos cards */
+    .feature-card {
+        width: 350px; /* Permitindo que os cards fiquem maiores */
     }
 
     .features-header h2 {
@@ -129,16 +187,32 @@
 
 /* Desktop Styles */
 @media (min-width: 1124px) {
-    .features-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); 
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
+
+    .feature-card {
+        max-width: 370px;
     }
 
-    .feature-card:nth-child(3) {
-        grid-column: auto; 
+    .features-slider {
+        max-width: 1200px;
+        padding: 0 30px;
+        overflow: hidden; /* Garante que nada extrapole */
+    }
+
+    .features-container {
+        width: 300%; 
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    .feature-slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        width: 33.33%; 
+        flex: 0 0 33.33%;
+        gap: 20px;
     }
 
     .features-header h2 {
@@ -150,37 +224,14 @@
         width: 80px;
     }
 
-    /* Card Title */
-    .feature-card h3 {
-        font-size: var(--font-size-subtitle);
+    .feature-card {
+        flex: 1 0 33.33%;
+        margin: 0 auto;
     }
 
-    /* Card Description */
-    .feature-card p {
-        font-size: var(--font-size-description);
-    }
-
-    /* Estilização dos pontos de navegação */
-    .features-dots {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        gap: 8px;
-    }
-
-    /* Cada ponto (dot) */
-    .dot {
-        width: 10px;
-        height: 10px;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 50%;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    /* Dot ativo (selecionado) */
-    .dot.active {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.2);
+    .feature-card {
+        flex: 1 1 370px;  
+        max-width: 370px; 
+        margin: 0 auto;
     }
 }
