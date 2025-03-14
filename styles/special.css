@@ -1,0 +1,102 @@
+#special-touch {
+    padding: 40px 20px;
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.special-touch-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin: 38px 0 25px;
+}
+
+.special-touch-header h1 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    height: 34px;
+    color: var(--color-text-primary)
+}
+
+.heart-icon {
+    width: 34px;
+    height: auto;
+}
+
+.special-touch-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile first: um card por linha */
+    gap: 20px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens no grid */
+    padding: 20px;
+}
+
+.special-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 640px; /* Define o limite de largura */
+    justify-self: center; 
+}
+
+.special-card.small {
+    max-width: 320px; /* Cards menores não passam de 320px */
+}
+
+.special-card img {
+    width: 100%; /* A imagem ocupa toda a largura do card */
+    height: auto; /* Mantém a proporção */
+    display: block;
+}
+
+.special-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.special-content h3 {
+    font-size: 18px;
+    color: #3a2c2c;
+    font-weight: bold;
+}
+
+
+/* Versão desktop */
+@media (min-width: 1124px) {
+    .special-touch-container {
+        display: grid;
+        grid-template-columns: 640px 1fr; /* Primeira coluna maior */
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "gift-card offer"
+            "gift-card customize";
+        gap: 20px;
+        justify-content: center; /* Centraliza os itens */
+        align-items: start;
+        padding: 40px;
+    }
+
+    /* Ajuste para o primeiro card maior */
+    .special-card:first-child {
+        grid-area: gift-card;
+        max-width: 640px;
+    }
+
+    /* Ajuste para os dois cards menores */
+    .special-card.small {
+        max-width: 320px;
+    }
+
+    .special-card:nth-child(2) {
+        grid-area: offer;
+    }
+
+    .special-card:nth-child(3) {
+        grid-area: customize;
+    }
+}
