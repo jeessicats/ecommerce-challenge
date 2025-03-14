@@ -1,102 +1,205 @@
+/* 
+  ========== ESTILOS GERAIS (MOBILE FIRST) ==========
+*/
+
+/* Seção Principal */
 #special-touch {
-    padding: 40px 20px;
-    background-color: var(--color-bg-secondary);
-    text-align: center;
-}
-
-.special-touch-header {
-    display: flex;
-    justify-content: center;
+    padding: 40px 40px;
+    background-color: #F7F2EC; /* Fundo de acordo com o Figma */
+    font-family: 'Roboto Serif', serif; /* Fonte indicada no Figma */
+    color: #29180F; /* Cor primária do texto no Figma */
+    text-align: center; /* Em mobile, mantemos tudo centralizado */
+  }
+  
+  /* Cabeçalho da Seção */
+  .special-touch-header {
+    margin-bottom: 40px;
+  }
+  
+  .special-touch-header h1 {
+    display: inline-flex; 
     align-items: center;
-    gap: 120px;
-    margin: 38px 0 25px;
-}
-
-.special-touch-header h1 {
-    display: flex;
-    align-items: center;
-    text-align: center;
     gap: 8px;
-    height: 34px;
-    color: var(--color-text-primary)
-}
-
-.heart-icon {
+    font-size: 24px;    /* Tamanho de fonte menor para mobile */
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  .heart-icon {
     width: 34px;
     height: auto;
-}
-
-.special-touch-container {
+  }
+  
+  /* Container dos Cards */
+  .special-touch-container {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile first: um card por linha */
-    gap: 20px; /* Espaçamento entre os itens */
-    justify-content: center; /* Centraliza os itens no grid */
+    grid-template-columns: 1fr; /* Uma coluna em mobile */
+    gap: 20px;
+    justify-content: center;
     padding: 20px;
-}
-
-.special-card {
+    max-width: 1312px; /* Limite máximo do container (Figma: 1312px) */
+    margin: 0 auto;
+  }
+  
+  /* Cards (estrutura base) */
+  .special-card {
+    position: relative; /* se precisar posicionar algo absoluto */
+    width: 100%;
+    max-width: 640px; /* Largura máxima em mobile, mas adaptável */
+    margin: 0 auto;
     background: #fff;
-    border-radius: 10px;
+    border: 3px solid #C9B079; /* Borda de acordo com o Figma */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25); /* Sombra */
+    border-radius: 20px; /* Raio padrão em mobile, será sobrescrito no desktop */
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 640px; /* Define o limite de largura */
-    justify-self: center; 
-}
+    text-align: center; /* Centralizado por padrão no mobile */
+  }
 
-.special-card.small {
-    max-width: 320px; /* Cards menores não passam de 320px */
-}
+  .special-card:first-child {
+    text-align: left; 
+    min-height: 500px;
+  }
 
-.special-card img {
-    width: 100%; /* A imagem ocupa toda a largura do card */
-    height: auto; /* Mantém a proporção */
+  .special-card:first-child img{
+    grid-area: gift-card;
+    max-height: 345px;
+  }
+  
+  .special-card img {
+    width: 100%;
+    height: auto;
     display: block;
-}
-
-.special-content {
+    object-fit: cover; 
+  }
+  
+  /* Conteúdo interno do Card */
+  .special-content {
     padding: 15px;
-    text-align: center;
-}
-
-.special-content h3 {
-    font-size: 18px;
-    color: #3a2c2c;
-    font-weight: bold;
-}
-
-
-/* Versão desktop */
-@media (min-width: 1124px) {
+    text-align: center; 
+  }
+  
+  .special-content h3 {
+    font-size: 20px; 
+    font-weight: 600;
+    margin: 20px 0 15px;
+  }
+  
+  .special-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .discover-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #29180F;
+    text-decoration: none;
+    gap: 4px; /* Se quiser um espacinho para um ícone/arrow */
+  }
+  
+  /* 
+    ========== ESTILOS PARA DESKTOP (≥ 1124px) ==========
+  */
+  @media (min-width: 1124px) {
+    /* Ajusta o título principal para o tamanho do Figma */
+    .special-touch-header h1 {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  
+    /* Grid de duas colunas: 
+       - 1ª coluna: Card grande (Gift Card)
+       - 2ª coluna: dois cards empilhados (Offers e Customization) */
     .special-touch-container {
-        display: grid;
-        grid-template-columns: 640px 1fr; /* Primeira coluna maior */
-        grid-template-rows: auto auto;
-        grid-template-areas:
-            "gift-card offer"
-            "gift-card customize";
-        gap: 20px;
-        justify-content: center; /* Centraliza os itens */
-        align-items: start;
-        padding: 40px;
+      grid-template-columns: 610px 610px;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "gift-card offer"
+        "gift-card customize";
+      gap: 20px;
+      padding: 0; /* Pode remover o padding extra no desktop */
     }
-
-    /* Ajuste para o primeiro card maior */
+  
+    /* Card 1 (Gift Card) - área "gift-card" */
     .special-card:first-child {
-        grid-area: gift-card;
-        max-width: 640px;
+      grid-area: gift-card;
+      background-color: #FFFFFF;
+      border-radius: 42px; 
+      text-align: left; 
+      max-height: 695px;
     }
-
-    /* Ajuste para os dois cards menores */
-    .special-card.small {
-        max-width: 320px;
-    }
-
+  
+    /* Card 2 (Offers) - área "offer" */
     .special-card:nth-child(2) {
-        grid-area: offer;
+      grid-area: offer;
+      background-color: #E1EDE9;
+      border-radius: 15px;
+      max-height: 340px;
     }
-
+  
+    /* Card 3 (Customization) - área "customize" */
     .special-card:nth-child(3) {
-        grid-area: customize;
+      grid-area: customize;
+      background-color: #F0DACD;
+      border-radius: 19px;
+      max-height: 340px;
     }
-}
+  
+    /* -- Ajustes de Layout Interno -- */
+  
+    /* 
+      O 1º card mantém imagem em cima, mas pode aumentar padding, 
+      pois é bem alto no Figma. Você pode ajustar como preferir:
+    */
+    .special-card:first-child .special-content {
+      padding: 40px;
+    }
+  
+    /* 
+      2º e 3º cards: imagem à esquerda, conteúdo à direita. 
+      Vamos usar display: flex para fazer esse layout no desktop. 
+    */
+    .special-card:nth-child(2),
+    .special-card:nth-child(3) {
+      display: flex;
+      align-items: stretch; /* imagem e texto ficam com a mesma altura */
+      text-align: left;     /* conteúdo à esquerda */
+    }
+  
+    /* Imagens do 2º e 3º cards ocupando 50% da largura (320px de 640px) */
+    .special-card:nth-child(2) img,
+    .special-card:nth-child(3) img {
+      width: 320px;
+      height: auto;
+      object-fit: cover;
+    }
+  
+    /* Conteúdo ocupa o restante (também 320px se quisermos exato) */
+    .special-card:nth-child(2) .special-content,
+    .special-card:nth-child(3) .special-content {
+      flex: 1;
+      padding: 40px; /* Espaçamento interno mais generoso em desktop */
+    }
+  
+    /* 
+      Títulos diferentes em cada card, seguindo o Figma:
+      - 1º card: ~40px
+      - 2º e 3º cards: ~24px
+    */
+    .special-card:first-child .special-content h3 {
+      font-size: var(--font-size-heading-md);
+      line-height: 1.2;
+      margin-top: 20px;
+    }
+  
+    .special-card:nth-child(2) .special-content h3,
+    .special-card:nth-child(3) .special-content h3 {
+      font-size: var(--font-size-featured);
+    }
+  }
+  
