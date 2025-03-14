@@ -16,11 +16,12 @@
 }
 
 /* Features Title */
-.features-header h2 {
+.features-header h1 {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 34px;
+    color: var(--color-text-primary)
 }
 
 .pink-flower {

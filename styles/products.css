@@ -23,7 +23,7 @@
 .products-header h2 {
     font-size: var(--font-size-highlight);
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0%;
     color: var(--color-text-primary);
     line-height: 120%;
@@ -35,6 +35,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    font-family: var(--font-family);
 }
 
 /* Spring Products Container */
@@ -229,9 +230,36 @@
     padding: 0;
 }
 
+.floating-title {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    margin-top: -30px; /* Ajuste para controlar a sobreposição */
+}
+
+/* Spring Spring Title */
+.floating-title h2 {
+    font-size: var(--font-size-highlight);
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0%;
+    color: var(--color-text-primary);
+    line-height: 120%;
+    background-color: var(--color-bg-light);
+    border: 3px solid #C9B079;
+    border-radius: 62px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 23px;
+}
+
+
 #most-wanted-plush {
     background-color: var(--color-bg-secondary);
-    padding: 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -284,7 +312,7 @@
 
 .product-image.clover {
     width: auto;
-    height: 170px;
+    height: 140px;
 }
 
 .product-image.jumbo {
@@ -294,6 +322,17 @@
 
 /* Media query for tablets */
 @media (min-width: 768px) and (max-width: 1123px) {
+    .products-header h2 {
+        font-size: var(--font-size-featured);
+        gap: 8px;
+    }
+
+    /* Spring Spring Title */
+    .floating-title h2 {
+        font-size: var(--font-size-featured);
+        gap: 8px;
+        margin-bottom: 33px;
+    }
 
     .spring-card {
         min-width: 200px;
@@ -305,6 +344,26 @@
     }
 
     .spring-card img {
+        width: 170px;
+        height: auto;
+    }
+
+    .product-image.aria {
+        width: 190px;
+        height: auto;
+    }
+    
+    .product-image.blaze {
+        width: 200px;
+        height: auto;
+    }
+    
+    .product-image.clover {
+        width: auto;
+        height: 170px;
+    }
+    
+    .product-image.jumbo {
         width: 170px;
         height: auto;
     }
@@ -333,6 +392,17 @@
 
 /* Media query for desktops */
 @media (min-width: 1124px) {
+    .products-header h2 {
+        font-size: var(--font-size-heading-sm);
+        gap: 8px;
+    }
+
+    .floating-title h2 {
+        font-size: var(--font-size-heading-sm);
+        gap: 10px;
+        margin-bottom: 43px;
+    }
+
     .spring-nav {
         display: none;
     }
@@ -359,6 +429,26 @@
         width: 210px;
         height: auto;
         max-width: 100%;
+    }
+
+    .product-image.aria {
+        width: 210px;
+        height: auto;
+    }
+    
+    .product-image.blaze {
+        width: 230px;
+        height: auto;
+    }
+    
+    .product-image.clover {
+        width: auto;
+        height: 195px;
+    }
+    
+    .product-image.jumbo {
+        width: 200px;
+        height: auto;
     }
 
     /* Nome do produto */
