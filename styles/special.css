@@ -36,7 +36,7 @@
     justify-content: center;
     padding: 20px;
     margin: 0 auto;
-    max-width: 320px;
+    max-width: 450px;
   }
   
   /* Cards (base structure) */
@@ -44,13 +44,17 @@
     display: block;
     margin: 0 auto 20px; 
     border: 3px solid var(--color-border-highlight);
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
     background: var(color-bg-light);
     overflow: hidden;
     text-align: center;
     width: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .special-card img {
+    max-height: 280px;
   }
   
   .special-card:hover {
@@ -60,6 +64,7 @@
   /* Card 1 (Gift Card) */
   .special-card.gift-card {
     background-color: var(--color-bg-light);
+
   }
   
   /* Card 2 (Offers) */
@@ -139,6 +144,10 @@
       margin: 0 auto;
       padding: 0;
     }
+
+    .special-card img {
+        max-height: 100%;
+      }
   
     /* Card 1 (Gift Card) */
     .special-card.gift-card {
@@ -224,6 +233,10 @@
     .special-card {
       margin: 0; 
     }
+
+    .special-card img {
+        max-height: 100%;
+      }
   
     .special-touch-header h1 {
       font-size: var(--font-size-heading-lg);
