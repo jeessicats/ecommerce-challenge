@@ -152,3 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
     identifySlides();
     updateSlidePosition();
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let cards = document.querySelectorAll(".spring-card");
+    
+    // Remove a classe last-card de todos os cards
+    cards.forEach(card => card.classList.remove("last-card"));
+
+    // Se houver um único item na última linha, adiciona a classe
+    if (cards.length % 3 === 1) { 
+        cards[cards.length - 1].classList.add("last-card");
+    }
+});
+
