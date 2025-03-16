@@ -1,7 +1,13 @@
 #spring-collection {
-    display: flex;
-    flex-direction: column;
     background-color: var(--color-bg-secondary);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#most-wanted-plush {
+    background-color: var(--color-bg-secondary);
+    margin: 0;
+    box-sizing: border-box;
 }
 
 /* Spring Collection Header */
@@ -9,139 +15,89 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0px;
+    
+    position: relative;
+    z-index: 10;
+
     height: 50px;
+    margin: -25px 0 20px 0;
 }
 
 /* Spring Icon */
 .spring-icon {
-    height: 38px;
+    height: 39px;
     width: auto;
 }
 
-/* Spring Spring Title */
+.teddy-icon {
+    height: 39px;
+    width: auto;
+}
+
+/* Products Title */
 .products-header h2 {
+    font-family: var(--font-family);
     font-size: var(--font-size-highlight);
-    font-style: italic;
     font-weight: 600;
+    font-style: italic;
+    line-height: 120%;
     letter-spacing: 0%;
     color: var(--color-text-primary);
-    line-height: 120%;
+    
     background-color: var(--color-bg-light);
     border: 3px solid #C9B079;
     border-radius: 62px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5px 15px;
+    
     display: flex;
     align-items: center;
     gap: 5px;
-    font-family: var(--font-family);
+    
+    padding: 5px 15px;
+    margin-bottom: 23px;
 }
 
 /* Spring Products Container */
-.spring-products {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 25px;
-    scrollbar-width: none;
-    padding: 20px 40px;
-    justify-content: start; 
-    position: relative;
-}
-
-/* Container for the products */
-.cards-container {
+.products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 20px;
-    justify-content: center;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-/* Container for the navigation arrows */
-.navigation-button {
-    position: absolute;  /* Fixado dentro do spring-collection */
-    top: 60%;
-    left: 0;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    padding: 20px 40px;
     width: 100%;
     max-width: 1440px;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    pointer-events: none; 
-    z-index: 15;
-}
-
-/* Navigation Arrows */
-.spring-nav {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(191, 139, 112, 0.7);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s, transform 0.2s;
-    z-index: 20;
-    pointer-events: auto;
-}
-
-/* Left Arrow */
-.spring-nav.prev {
-    position: absolute;
-    left: 10px;
-}
-
-/* Right Arrow */
-.spring-nav.next {
-    position: absolute;
-    right: 10px;
-}
-
-/* Hover Efect arrow */
-.spring-nav:hover {
-    transform: scale(1.2); 
-}
-
-/* Hide scrollbar for Chrome, Safari and Edge */
-.spring-products::-webkit-scrollbar {
-    display: none;
+    justify-content: center; 
 }
 
 /* Card for each product */
-.spring-card {
+.product-card {
     background: var(--color-bg-light);
     border-radius: 28px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 3px;
     text-align: center;
-    scroll-snap-align: center;
-    min-width: 190px;
+    max-width: 175px; 
+    width: 100%;
+}
+
+.spring-products.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* Container for the products */
-.product-container {
+.product-img {
     background-color: var(--color-bg-secondary);
     border-radius: 28px 28px 0 0;
     height: 170px;
-    display: flex;
-    flex-direction: column;
     padding-bottom: 10px;
     padding-top: 20px;
     align-items: center;
 }
 
 /* Image for each product */
-.spring-card img {
-    width: 140px;
+.product-img img {
+    width: 130px;
     height: auto;
     border-radius: 28px 28px 0 0;
     margin-bottom: 10px;
@@ -164,7 +120,7 @@
 }
 
 /* Rating */
-.rating img {
+.product-rating img {
     width: 80px; 
     height: auto;
     display: block;
@@ -174,7 +130,7 @@
 }
 
 /* Price */
-.price {
+.product-price {
     font-size: var(--font-size-description);
     font-weight: bold;
     color: var(--color-text-primary);
@@ -221,15 +177,6 @@
     transform: scale(0.95);
 }
 
-
-.divider {
-    background-color: var(--color-bg-accent);
-    height: 35px;
-    gap: 0;
-    margin-bottom: 0;
-    padding: 0;
-}
-
 .floating-title {
     position: relative;
     z-index: 10;
@@ -238,67 +185,11 @@
     margin-top: -30px; /* Ajuste para controlar a sobreposição */
 }
 
-/* Spring Spring Title */
-.floating-title h2 {
-    font-size: var(--font-size-highlight);
-    font-style: italic;
-    font-weight: 500;
-    letter-spacing: 0%;
-    color: var(--color-text-primary);
-    line-height: 120%;
-    background-color: var(--color-bg-light);
-    border: 3px solid #C9B079;
-    border-radius: 62px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 5px 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 23px;
-}
 
 
-#most-wanted-plush {
-    background-color: var(--color-bg-secondary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-.teddy-icon {
-    height: 38px;
-    width: auto;
-}
 
-/* Navigation Buttons */
-.plush-navigation { 
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-}
 
-.plush-nav {
-    width: 30px;
-    height: 30px;
-    background-color: rgba(191, 139, 112, 0.7);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s, transform 0.2s;
-    pointer-events: auto;
-}
-
-.plush-nav:hover { 
-    transform: scale(1.2);
-}
 
 .product-image.aria {
     width: 170px;
@@ -335,12 +226,14 @@
     }
 
     .spring-card {
-        min-width: 200px;
-        height: 320px;
+        min-width: auto; 
+        width: 100%;
     }
 
-    .product-container {
-        height: 210px;
+    .spring-products {
+        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Dois cards por linha */
+        gap: 15px;
+        padding: 15px;
     }
 
     .spring-card img {
@@ -412,17 +305,16 @@
         gap: 50px;
     }
 
+    .spring-products {
+        grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Exibe três cards por linha */
+    }
+
     /* Cards dos produtos */
     .spring-card {
         min-width: 250px;
         max-width: 300px;
     }
 
-    /* Container da imagem do produto */
-    .product-container {
-        height: 230px;
-        max-width: 320px;
-    }
 
     /* Imagem do produto */
     .spring-card img {

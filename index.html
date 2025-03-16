@@ -23,6 +23,9 @@
     <!-- Features section styles -->
     <link rel="stylesheet" href="styles/features.css">
 
+    <!-- Special touch section styles -->
+    <link rel="stylesheet" href="styles/special.css">
+
     <!-- Footer styles -->
     <link rel="stylesheet" href="styles/footer.css">
 
@@ -147,87 +150,77 @@
             </h2>
         </header>
 
-        <!-- Navigation buttons -->
-        <div class="navigation-button">
-            <button class="spring-nav prev" aria-label="Previous">&#10094;</button>
-            <button class="spring-nav next" aria-label="Next">&#10095;</button>
-        </div>
-
         <!-- Product Grid -->
-        <section class="spring-products">   
-            
-            <div class="cards-container"> 
+        <section class="products-grid">   
+            <article class="product-card first-product" >
 
-                <article class="spring-card" >
-
-                    <!-- Product Image -->
-                    <div class="product-container teddy">
-                        <img src="/assets/images/products/teddy.png" alt="Teddy - 10.5 Orso">
-                    </div>
+                <!-- Product Image -->
+                <div class="product-img teddy">
+                    <img src="/assets/images/products/teddy.png" alt="Teddy - 10.5 Orso">
+                </div>
     
-                    <!-- Product Info -->
-                    <div class="product-info">
-                        <h3>Teddy - 10.5 Orso</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="3.5 stars">
-                        </p>
-                        <p class="price">$24</p>
-                    </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h3>Teddy - 10.5 Orso</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="3.5 stars">
+                    </p>
+                    <p class="product-price">$24</p>
+                </div>
                     
-                </article>
+            </article>
     
-                <article class="spring-card" >
+            <article class="product-card second-product" >
     
-                    <!-- Product Image -->
-                    <div class="product-container trixy">
-                        <img src="/assets/images/products/trixy.png" alt="Trixy - 8.5 Tricerapoto">
-                    </div>
+                <!-- Product Image -->
+                <div class="product-img trixy">
+                    <img src="/assets/images/products/trixy.png" alt="Trixy - 8.5 Tricerapoto">
+                </div>
     
-                    <!-- Product Info -->
-                    <div class="product-info">
-                        <h3>Trixy - 8.5 Tricerapoto</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="3.5 stars">
-                        </p>
-                        <p class="price">$30</p>
-                    </div>
-                </article>
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h3>Trixy - 8.5 Tricerapoto</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="3.5 stars">
+                    </p>
+                    <p class="product-price">$30</p>
+                </div>
+            </article>
     
-                <article class="spring-card" >
+            <article class="product-card third-product" >
     
-                    <!-- Product Image -->
-                    <div class="product-container bunny">
-                        <img src="/assets/images/products/bunny.png" alt="Bunny - 10.5 Coniglio">
-                    </div>
+                <!-- Product Image -->
+                <div class="product-img bunny">
+                    <img src="/assets/images/products/bunny.png" alt="Bunny - 10.5 Coniglio">
+                </div>
     
-                    <!-- Product Info -->
-                    <div class="product-info">
-                        <h3>Bunny - 10.5 Coniglio</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="3.5 stars">
-                        </p>
-                        <p class="price">$25</p>
-                    </div>
-                </article>
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h3>Bunny - 10.5 Coniglio</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="3.5 stars">
+                    </p>
+                    <p class="product-price">$25</p>
+                </div>
+            </article>
     
-                <article class="spring-card">
+            <article class="product-card fourth-product">
     
-                    <!-- Product Image -->
-                    <div class="product-container gigi">
-                        <img src="/assets/images/products/gigi.png" alt="Gigi - 12.5 Giraffa">
-                    </div>
+                <!-- Product Image -->
+                <div class="product-img gigi">
+                    <img src="/assets/images/products/gigi.png" alt="Gigi - 12.5 Giraffa">
+                </div>
     
-                    <!-- Product Info -->
-                    <div class="product-info">
-                        <h3>Gigi - 12.5 Giraffa</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="3.5 stars">
-                        </p>
-                        <p class="price">$30</p>
-                    </div>
-                </article>
-            </div>
-            
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h3>Gigi - 12.5 Giraffa</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="3.5 stars">
+                    </p>
+                    <p class="product-price">$30</p>
+                </div>
+            </article>
+        
         </section>
 
         <!-- Call to Action Button -->
@@ -318,85 +311,144 @@
 
     </section>
 
-    <div class="divider"></div>
-
     <!-- Most Wanted Plush Toys Section -->
     <section id="most-wanted-plush" class="products-section">   
         
         <!-- Header of the Most Wanted Plush Toys Section -->
-        <header class="floating-title">
+        <header class="products-header">
             <h2>
                 <img class="teddy-icon" src="/assets/icons/teddy-icon.png" alt="Teddy Icon"> 
                 <span>I Peluche Più Ricercati</span>
             </h2>
         </header>
         
-        <!-- Navigation buttons -->
-        <div class="navigation-button">
-            <button class="plush-nav prev" aria-label="Previous">&#10094;</button>
-            <button class="plush-nav next" aria-label="Next">&#10095;</button>
-        </div>
-        
         <!-- Product Grid -->
-        <section class="spring-products">   
-            <div class="cards-container"> 
-                <article class="spring-card">
-                    <div class="product-container">
-                        <img class="product-image aria" src="/assets/images/products/aria.png" alt="Aria - 11.5 Farfalla">
-                    </div>
-                    <div class="product-info">
-                        <h3>Aria - 11.5 Farfalla</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="4 stars">
-                        </p>
-                        <p class="price">$35</p>
-                    </div>
-                </article>
+        <section class="products-grid">  
 
-                <article class="spring-card">
-                    <div class="product-container">
-                        <img class="product-image blaze" src="/assets/images/products/blaze.png" alt="Blaze - 13.5 Drago">
-                    </div>
-                    <div class="product-info">
-                        <h3>Blaze - 13.5 Drago</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="4 stars">
-                        </p>
-                        <p class="price">$25</p>
-                    </div>
-                </article>
+            <!-- Product Card--> 
+            <article class="product-card first-product">
 
-                <article class="spring-card">
-                    <div class="product-container">
-                        <img class="product-image clover" src="/assets/images/products/clover.png" alt="Clover - 10.5 Lepre">
-                    </div>
-                    <div class="product-info">
-                        <h3>Clover - 10.5 Lepre</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="4 stars">
-                        </p>
-                        <p class="price">$30</p>
-                    </div>
-                </article>
+                <!-- Product Image -->
+                <div class="product-img aria">
+                    <img src="/assets/images/products/aria.png" alt="Aria - 11.5 Farfalla">
+                </div>
 
-                <article class="spring-card">
-                    <div class="product-container">
-                        <img class="product-image jumbo" src="/assets/images/products/jumbo.png" alt="Jumbo - 10.5 Elefante">
-                    </div>
-                    <div class="product-info">
-                        <h3>Jumbo - 10.5 Elefante</h3>
-                        <p class="rating">
-                            <img src="/assets/icons/rating.png" alt="4 stars">
-                        </p>
-                        <p class="price">$25</p>
-                    </div>
-                </article>
-            </div>
+                <div class="product-info">
+                    <h3>Aria - 11.5 Farfalla</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="4 stars">
+                    </p>
+                    <p class="product-price">$35</p>
+                </div>
+            </article>
+
+            <article class="product-card second-product">
+                <div class="product-img blaze">
+                    <img src="/assets/images/products/blaze.png" alt="Blaze - 13.5 Drago">
+                </div>
+                <div class="product-info">
+                    <h3>Blaze - 13.5 Drago</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="4 stars">
+                    </p>
+                    <p class="product-price">$25</p>
+                </div>
+            </article>
+
+            <article class="product-card third-product">
+
+                <div class="product-img clover">
+                    <img src="/assets/images/products/clover.png" alt="Clover - 10.5 Lepre">
+                </div>
+
+                <div class="product-info">
+                    <h3>Clover - 10.5 Lepre</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="4 stars">
+                    </p>
+                    <p class="product-price">$30</p>
+                </div>
+            </article>
+
+            <article class="product-card fourth-product">
+                <div class="product-img jumbo">
+                    <img class="product-image jumbo" src="/assets/images/products/jumbo.png" alt="Jumbo - 10.5 Elefante">
+                </div>
+                <div class="product-info">
+                    <h3>Jumbo - 10.5 Elefante</h3>
+                    <p class="product-rating">
+                        <img src="/assets/icons/rating.png" alt="4 stars">
+                    </p>
+                    <p class="product-price">$25</p>
+                </div>
+            </article>
+
         </section>
         
         <!-- Call to Action Button -->
         <div class="cta-button">
             <button id="explore-button">Esplora adesso</button>
+        </div>
+    </section>
+
+    <!-- Special Touch Section -->
+    <section id="special-touch">
+        <header class="special-touch-header">
+            <h1>
+                <img class="heart-icon" src="/assets/icons/blue-heart.png" alt="Blue Heart Icon">
+                "Aggiungi Un Tocco Speciale Al Tuo Peluche"
+            </h1>
+        </header>
+
+        <div class="special-touch-container">
+            <!-- Gift Card -->
+            <article class="special-card gift-card">
+                <img src="/assets/images/special/gift-card.png" alt="Gift Card">
+                <div class="special-content gift-card-content">
+                    <h3>Regala un sorriso con la nostra Gift Card</h3>
+                    <p>
+                        Vuoi fare un regalo ma non sai cosa scegliere? La nostra Gift Card è la soluzione perfetta!
+                        Con essa, il destinatario potrà scegliere il peluche che preferisce tra la nostra vasta selezione.
+                        Scegli l'importo, personalizza il biglietto d'auguri e rendi felice chi ami!
+                    </p>
+                    <a href="#" class="discover-link">
+                        <p>Scopri di più</p>
+                        <p>&#10095;</p>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Weekly Offers -->
+            <article class="special-card offer-card">
+                <img src="/assets/images/special/offers.png" alt="Offerte speciali">
+                <div class="special-content">
+                    <h3>Le offerte speciali della settimana</h3>
+                    <p>
+                        Dai un'occhiata alle nostre offerte speciali! Troverai sconti imperdibili su alcuni dei nostri peluche più popolari.
+                        Ma affrettati, le offerte sono per tempo limitato!
+                    </p>
+                    <a href="#" class="discover-link">
+                        <p>Scopri di più</p>
+                        <p>&#10095;</p>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Customization -->
+            <article class="special-card customize-card">
+                <img src="/assets/images/special/customization.png" alt="Personalizzazione peluche">
+                <div class="special-content">
+                    <h3>Personalizza il tuo peluche con noi</h3>
+                    <p>
+                        Vuoi rendere il tuo peluche ancora più speciale? Personalizzalo con il nome o 
+                        la data! Offriamo un servizio di personalizzazione per molti dei nostri peluche, rendendoli unici e indimenticabili.
+                    </p>
+                    <a href="#" class="discover-link">
+                        <p>Scopri di più</p>
+                        <p>&#10095;</p>
+                    </a>
+                </div>
+            </article>
         </div>
     </section>
 
