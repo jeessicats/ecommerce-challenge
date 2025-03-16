@@ -102,7 +102,7 @@
 }
 
 /* Product Name */
-.product-info h3 {
+.product-info h4 {
     font-size: var(--font-size-description);
     color: var(--color-text-primary);
     margin-bottom: 5px;
@@ -200,7 +200,7 @@
     }
 
     /* Product Name */
-    .product-info h3 {
+    .product-info h4 {
         font-size: var(--font-size-body);
         margin-bottom: 8px;
     }
@@ -262,7 +262,7 @@
     }
 
     /* Product Name */
-    .product-info h3 {
+    .product-info h4 {
         font-size: var(--font-size-highlight);
         margin-bottom: 9px;
     }
