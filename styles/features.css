@@ -166,7 +166,7 @@
         margin: 45px 10px 10px 20px;
     }
 
-    .features-header h2 {
+    .features-header h1 {
         font-size: 31px;
         gap: 20px;
         height: 40px;
@@ -210,9 +210,8 @@
         margin: 60px 10px 40px 20px;
     }
     
-
-    .features-header h2 {
-        font-size: var(--font-size-heading-lg);
+    .features-header h1 {
+        font-size: var(--font-size-heading-lg) !important;
         gap: 20px;
         height: 58px;
     }

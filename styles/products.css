@@ -1,13 +1,13 @@
-#spring-collection {
-    background-color: var(--color-bg-secondary);
-    margin: 0;
-    box-sizing: border-box;
-}
-
+#spring-collection, 
 #most-wanted-plush {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: var(--color-bg-secondary);
-    margin: 0;
     box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Spring Collection Header */
@@ -20,15 +20,11 @@
     z-index: 10;
 
     height: 50px;
-    margin: -25px 0 20px 0;
+    margin: -20px 0 20px 0;
 }
 
-/* Spring Icon */
-.spring-icon {
-    height: 39px;
-    width: auto;
-}
-
+/* Icon */
+.spring-icon, 
 .teddy-icon {
     height: 39px;
     width: auto;
@@ -36,16 +32,14 @@
 
 /* Products Title */
 .products-header h2 {
-    font-family: var(--font-family);
-    font-size: var(--font-size-highlight);
+    font-size: var(--font-size-button);
     font-weight: 600;
     font-style: italic;
     line-height: 120%;
-    letter-spacing: 0%;
     color: var(--color-text-primary);
     
     background-color: var(--color-bg-light);
-    border: 3px solid #C9B079;
+    border: 3px solid var(--color-border-highlight);
     border-radius: 62px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     
@@ -60,12 +54,13 @@
 /* Spring Products Container */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(2, 1fr);  
     gap: 15px;
-    padding: 20px 40px;
+    padding: 20px;
     width: 100%;
-    max-width: 1440px;
-    justify-content: center; 
+    max-width: 410px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 /* Card for each product */
@@ -75,34 +70,31 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 3px;
     text-align: center;
-    max-width: 175px; 
-    width: 100%;
-}
-
-.spring-products.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
 }
 
 /* Container for the products */
 .product-img {
     background-color: var(--color-bg-secondary);
     border-radius: 28px 28px 0 0;
-    height: 170px;
-    padding-bottom: 10px;
-    padding-top: 20px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+
+    height: 170px; 
+    max-height: 180px; 
+
+    padding: 20px 0 10px 0;
+    margin-bottom: 5px;
 }
 
 /* Image for each product */
 .product-img img {
-    width: 130px;
+    max-width: 130px;
     height: auto;
     border-radius: 28px 28px 0 0;
-    margin-bottom: 10px;
+    margin: 0;
     display: block;
-    margin-top: auto;
 }
 
 /* Product Information */
@@ -112,20 +104,18 @@
 }
 
 /* Product Name */
-.spring-card h3 {
+.product-info h3 {
     font-size: var(--font-size-description);
-    font-weight: bold;
     color: var(--color-text-primary);
     margin-bottom: 5px;
 }
 
 /* Rating */
 .product-rating img {
-    width: 80px; 
+    width: 70px; 
     height: auto;
     display: block;
     margin: 0 auto; 
-    border-radius: 0;
     padding: 1px 0 6px 0;
 }
 
@@ -146,13 +136,14 @@
 
 /* Explore Button */
 #explore-button {
-    width: 150px;
-    height: 35px;
+    width: 180px;
+    height: 38px;
     background-color: var(--color-button-primary);
     color: #FFFFFF;
     font-size: var(--font-size-description);
-    font-weight: semi-bold;
-    line-height: 150%;
+    font-family: var(--font-family);
+    font-weight: 500;
+    line-height: 180%;
     text-align: center;
     border: 2px solid #FFFFFF;
     border-radius: 29px;
@@ -177,40 +168,6 @@
     transform: scale(0.95);
 }
 
-.floating-title {
-    position: relative;
-    z-index: 10;
-    display: flex;
-    justify-content: center;
-    margin-top: -30px; /* Ajuste para controlar a sobreposição */
-}
-
-
-
-
-
-
-
-.product-image.aria {
-    width: 170px;
-    height: auto;
-}
-
-.product-image.blaze {
-    width: 190px;
-    height: auto;
-}
-
-.product-image.clover {
-    width: auto;
-    height: 140px;
-}
-
-.product-image.jumbo {
-    width: 160px;
-    height: auto;
-}
-
 /* Media query for tablets */
 @media (min-width: 768px) and (max-width: 1123px) {
     .products-header h2 {
@@ -218,63 +175,49 @@
         gap: 8px;
     }
 
-    /* Spring Spring Title */
-    .floating-title h2 {
-        font-size: var(--font-size-featured);
-        gap: 8px;
-        margin-bottom: 33px;
-    }
-
-    .spring-card {
-        min-width: auto; 
-        width: 100%;
-    }
-
-    .spring-products {
-        grid-template-columns: repeat(2, minmax(150px, 1fr)); /* Dois cards por linha */
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .spring-card img {
-        width: 170px;
-        height: auto;
-    }
-
-    .product-image.aria {
-        width: 190px;
-        height: auto;
-    }
-    
-    .product-image.blaze {
-        width: 200px;
-        height: auto;
-    }
-    
-    .product-image.clover {
+    .spring-icon, 
+    .teddy-icon {
+        height: 45px;
         width: auto;
-        height: 170px;
-    }
-    
-    .product-image.jumbo {
-        width: 170px;
-        height: auto;
     }
 
-    .spring-card h3 {
-        font-size: var(--font-size-secondary);
-        margin-top: 10px;
-        margin-bottom: 10px;
+    .products-grid { 
+        gap: 20px;
+        padding: 40px;
+        width: 100%;
+        max-width: 600px;
     }
 
-    .price {
-        font-size: var(--font-size-secondary);
-        margin-bottom: 10px;        
+    .product-card {
+        min-height: 300px;
     }
 
-    .rating img {
+    /* Container for the products */
+    .product-img {
+        min-height: 230px; 
+    }
+
+    .product-img img {
+        max-width: 200px;
+    }
+
+    /* Product Name */
+    .product-info h3 {
+        font-size: var(--font-size-body);
+        margin-bottom: 8px;
+    }
+
+    /* Rating */
+    .product-rating img {
         width: 85px; 
     }
+
+    /* Price */
+    .product-price {
+        font-size: var(--font-size-body);
+        margin-bottom: 9px;
+    }
+  
 
     #explore-button {
         width: 200px;
@@ -288,78 +231,54 @@
     .products-header h2 {
         font-size: var(--font-size-heading-sm);
         gap: 8px;
+        height: 67px;
+        padding: 10px 20px;
     }
 
-    .floating-title h2 {
-        font-size: var(--font-size-heading-sm);
-        gap: 10px;
-        margin-bottom: 43px;
-    }
-
-    .spring-nav {
-        display: none;
-    }
-
-    /* Define layout de grid no desktop */
-    .cards-container {
-        gap: 50px;
-    }
-
-    .spring-products {
-        grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Exibe três cards por linha */
-    }
-
-    /* Cards dos produtos */
-    .spring-card {
-        min-width: 250px;
-        max-width: 300px;
-    }
-
-
-    /* Imagem do produto */
-    .spring-card img {
-        width: 210px;
-        height: auto;
-        max-width: 100%;
-    }
-
-    .product-image.aria {
-        width: 210px;
-        height: auto;
-    }
-    
-    .product-image.blaze {
-        width: 230px;
-        height: auto;
-    }
-    
-    .product-image.clover {
+    .spring-icon, 
+    .teddy-icon {
+        height: 55px;
         width: auto;
-        height: 195px;
-    }
-    
-    .product-image.jumbo {
-        width: 200px;
-        height: auto;
     }
 
-    /* Nome do produto */
-    .spring-card h3 {
+    .products-grid { 
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 30px;
+        padding: 40px 70px;
+        width: 100%;
+        max-width: 1440px;
+    }
+
+    .product-card {
+        max-height: 382px;
+        max-width: 308px;
+    }
+
+    /* Container for the products */
+    .product-img {
+        min-height: 250px; 
+    }
+
+    .product-img img {
+        max-width: 220px;
+    }
+
+    /* Product Name */
+    .product-info h3 {
         font-size: var(--font-size-highlight);
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: fit-content;
+        margin-bottom: 9px;
     }
 
-    /* Estilização da classificação */
-    .rating img {
-        width: 100px; 
+    /* Rating */
+    .product-rating img {
+        width: 98px; 
+        margin-bottom: 3px;
     }
 
-    /* Preço do produto */
-    .price {
+    /* Price */
+    .product-price {
         font-size: var(--font-size-highlight);
-        margin-bottom: 10px;        
+        margin-bottom: 9px;
     }
 
     #explore-button {
