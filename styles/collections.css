@@ -1,23 +1,18 @@
 #teddyshop-collections {
     background: var(--color-bg-secondary);
+    padding-bottom: 50px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 50px;
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0 auto;
 }
 
 .collections-header h1 {
     font-size: var(--font-size-featured);
-    font-weight: bold; 
+    font-weight: 600; 
     text-align: center;
     color: var(--color-text-primary);
     margin-top: 30px;
     line-height: 120%;
-    padding: 0 20px;
+    padding: 10px 20px 5px 20px;
 }
 
 .collections-header p {
@@ -31,70 +26,47 @@
 }
 
 /* Main container for the products */
-.collections-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  
-    gap: 15px;
-    padding: 20px;
-    width: 100%;
-    max-width: 410px;
-    margin: 0 auto;
-    justify-content: center;
-}
-
-/* Card for each product */
-.collection-card {
-    background: var(--color-bg-light);
-    border-radius: 28px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 2px;
-    text-align: center;
-    align-items: center; 
-}
-
-.collection-card.last-collection-item {
-    grid-column: 1 / -1; 
-    justify-self: center; 
-    align-self: center;
-    width: 215px;
-}
-
-.collection-img {
-    border-radius: 28px 28px 0 0;
+.collections-container {
     display: flex;
-    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px 20px 25px 20px;
     justify-content: center;
-
-    max-height: 250px; 
 }
 
-/* Image for each product */
-.collection-img img {
-    max-height: 190px;
-    width: auto;
-    width: auto;
+.collection-card {
+    background-color: var(--color-bg-light);
+    border-radius: 28px;
+    padding: 3px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    max-width: 220px;
+}
+
+.collection-card img {
     border-radius: 28px 28px 0 0;
-    margin: 0;
-    display: block;
+    width: 100%;
 }
 
 .collection-info {
     text-align: center;
-    padding: 5px 10px;
+    padding: 10px;
+    width: 100%;
 }
 
 .collection-info h4 {
     font-size: var(--font-size-body);
     font-weight: bold;
     color: var(--color-text-primary);
-    margin: 10px 0;
+    padding: 5px 0;
 }
 
 .collection-info p {
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-regular);
     color: var(--color-text-tertiary);
-    margin: 10px 0;
+    padding: 5px 0;
+    line-height: 150%;
 }
 
 /* Tablet screens */
@@ -107,30 +79,16 @@
         font-size: var(--font-size-body);
     }
 
-    .collections-grid { 
-        gap: 20px;
-        max-width: 500px;
+    .collections-container {
+        gap: 35px;
     }
 
     .collection-card {
-        height: 360px;
+        max-width: 300px;
     }
 
-    .collection-card.last-collection-item {
-        width: 261px;
-        height: auto;
-    }
-
-    .collection-img {
-    }
-    
-    /* Image for each product */
-    .collection-img img {
-        max-height: 230px;
-    }
-    
     .collection-info h4 {
-        font-size: var(--font-size-subtitle);
+        font-size: var(--font-size-highlight);
     }
     
     .collection-info p {
@@ -140,32 +98,6 @@
 
 /* Large screens */
 @media (min-width: 1124px) {
-    .collections-navigation {
-        display: none;
-    }
-
-    .collections-products {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr) ; /* 3 cards lado a lado */
-        gap: 24px;
-        padding: 20 clamp(67px, 5vw, 120px);
-        justify-content: center;
-        margin: 0 auto;
-        max-width: 1400px;
-    }
-
-    /* Cards dinâmicos */
-    .collection-card {
-        min-width: 250px;
-        max-width: 390px;
-        flex: 1;     
-    }
-
-    /* Imagens dinâmicas dentro dos cards */
-    .collection-card img {
-        width: 100%;
-        max-width: 390px;
-    }
 
     .collections-header h1 {
         font-size: var(--font-size-heading-lg);
@@ -174,12 +106,30 @@
 
     .collections-header p {
         font-size: var(--font-size-highlight);
-        max-width: 1000px;
+        max-width: 1050px;
         margin-bottom: 39px;
     }
 
-    .collection-card h3 {
+    .collections-container {
+        gap: 60px;
+        padding: 5px 40px 60px 40px;
+    }
+
+    .collection-card {
+        max-width: 390px;
+    }
+
+    .collection-card img {
+        border-radius: 28px 28px 0 0;
+    }
+    
+    .collection-info {
+        padding: 20px 12px;
+    }
+    
+    .collection-card h4 {
         font-size: var(--font-size-featured);
+        padding-bottom: 10px;
     }
 
     .collection-card p {

@@ -1,9 +1,7 @@
 #features {
-    background-color: var(--color-bg-accent);    
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-    position: center;
+    background-color: var(--color-bg-accent);
+    display: flex;
+    flex-direction: column;    
     padding-bottom: 50px;
 }
 
