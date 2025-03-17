@@ -26,6 +26,9 @@
     <!-- Special touch section styles -->
     <link rel="stylesheet" href="styles/special.css">
 
+    <!-- Testimonials section styles -->
+    <link rel="stylesheet" href="styles/testimonials.css">
+
     <!-- Footer styles -->
     <link rel="stylesheet" href="styles/footer.css">
 
@@ -159,7 +162,7 @@
     <section id="spring-collection" class="products-section">
         
         <!-- Header of the Spring Collection Section -->
-        <header class="products-header">
+        <header class="floating-header">
             <h2>
                 <img class="spring-icon" src="/assets/icons/blue-flower.png" alt="Spring Flower Icon"> 
                 Acquista Per La Primavera 
@@ -331,7 +334,7 @@
     <section id="most-wanted-plush" class="products-section">   
         
         <!-- Header of the Most Wanted Plush Toys Section -->
-        <header class="products-header">
+        <header class="floating-header">
             <h2>
                 <img class="teddy-icon" src="/assets/icons/teddy-icon.png" alt="Teddy Icon"> 
                 <span>I Peluche Più Ricercati</span>
@@ -467,6 +470,96 @@
             </article>
         </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <header class="floating-header">
+            <h2>
+                <img class="heart-icon" src="/assets/icons/blue-heart.png" alt="Blue Heart Icon">
+                <span>Opinioni dei nostri clienti</span>
+            </h2>
+        </header>
+
+        <!-- Slider Wrapper -->
+        <div class="slider">
+
+            <!-- Dots Navigation-->
+            <div class="nav-dots">
+                <input type="radio" name="dot" id="dot1" class="dot" checked>
+                <input type="radio" name="dot" id="dot2" class="dot">
+                <input type="radio" name="dot" id="dot3" class="dot">
+                <input type="radio" name="dot" id="dot4" class="dot">
+                <input type="radio" name="dot" id="dot5" class="dot">
+            </div>
+
+            <div class="slides">
+
+                <article class="testimonial-card first-card">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            “Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua 
+                                morbidezza lo rende perfetto per abbracciare”
+                        </blockquote>
+                        <figcaption>
+                            <span class="author-initial">M</span>
+                            <div class="author-info">
+                                <span class="author-name">Maria Cipollari</span>
+                                <span class="author-profession-kinship">Casalinga, mamma</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </article>
+
+
+                <article class="testimonial-card second-card">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            "Non sono soddisfatto di questo peluche. Il materiale sembra economico e la cucitura è piuttosto approssimativa”
+                        </blockquote>
+                        <figcaption>
+                            <span class="author-initial">C</span>
+                            <div class="author-info">
+                                <span class="author-name">Claudio Boldi</span>
+                                <span class="author-profession-kinship">Operaio, genitore</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                </article>
+
+
+
+                <article class="testimonial-card third-card">
+                    <div class="testimonial-content">
+                        <blockquote>
+                            “Il peluche stesso è di alta qualità, con dettagli ben curati e una consistenza morbida e soffice. Consiglio vivamente questo negozio!"
+                        </blockquote>
+                        <figcaption>
+                            <span class="author-initial">J</span>
+                            <div class="author-info">
+                                <span class="author-name">Jessica Merla</span>
+                                <span class="author-profession-kinship">Pensionata, nonna</span>
+                            </div>
+                        </figcaption>
+                    </div>
+                    
+                </article>
+
+            </div>
+
+            <div class="manual-navigation">
+                <label for="dot1" class="manual-btn"></label>
+                <label for="dot2" class="manual-btn"></label>
+                <label for="dot3" class="manual-btn"></label>
+                <label for="dot4" class="manual-btn"></label>
+                <label for="dot5" class="manual-btn"></label>
+            </div>
+            
+        </div>
+
+        
+
+    </section>
+
 
     <!-- Load compiled TypeScript script -->
     <script src="dist/main.js" defer></script>
