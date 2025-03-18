@@ -90,7 +90,7 @@
     }
 }
 
-/* Desktop: 1124px and up */
+/* Desktop: 1170px and up */
 @media (min-width: 1170px) {
     #hero {
         min-height: auto;

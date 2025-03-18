@@ -154,7 +154,6 @@
         max-width: 1100px;
     }
 
-    /* Card Styles */
     .feature-card {
         padding: 10px 10px;
         margin: 10px 25px;
@@ -225,7 +224,6 @@
         padding: 15px;
     }
 
-    /* Icon Sizes */
     .shipping-icon img { width: 42px; }
     .quality-icon img { width: 33px; }
     .service-icon img { width: 45px; }

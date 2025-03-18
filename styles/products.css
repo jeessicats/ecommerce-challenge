@@ -193,9 +193,6 @@
         min-height: 300px;
     }
 
-    
-
-    /* Container for the products */
     .product-img {
         min-height: 230px; 
     }
@@ -221,7 +218,6 @@
         margin-bottom: 9px;
     }
   
-
     #explore-button {
         width: 200px;
         height: 42px;

@@ -162,13 +162,11 @@
     display: flex;
 }
 
-/* Estilo dos ícones */
 .nav-icons .icon img {
     height: 24px; 
     transition: transform 0.3s ease-in-out;
 }
 
-/* Efeito ao passar o mouse nos ícones */
 .nav-icons .icon:hover img {
     transform: scale(1.1);
 }
@@ -216,17 +214,14 @@
         padding: 21px 30px;
     }
 
-    /* Ajuste no tamanho do logo */
     .bear-logo {
         height: 45px;
     }
 
-    /* Reduz o espaço entre os links */
     .nav-links {
         gap: 20px;
     }
 
-    /* Ajuste nos ícones */
     .nav-icons {
         gap: 12px;
     }
@@ -235,7 +230,6 @@
         height: 20px;
     }
 
-    /* Ajustando o botão de compra */
     #buy-button {
         font-size: var(--font-size-body);
         padding: 8px 20px;
@@ -274,7 +268,7 @@
     
     /* Logo */
     .logo {
-        margin: 0; /* Removes extra margin */
+        margin: 0; 
     }
     
     /* Logo image */

@@ -208,7 +208,6 @@
     margin-top: 10px;
 }
 
-/* Efeito para mensagens de sucesso e erro */
 .success {
     color: var(--color-button-buy); 
 }
@@ -278,7 +277,6 @@
         text-align: left;
     }
 
-    /* Footer Links */
     .footer-container {
         flex-wrap: wrap;
         justify-content: space-between;
@@ -320,7 +318,6 @@
         padding: 5px 0;
     }
 
-    /* Footer Logo and Branding */
     .footer-logo {
         display: flex;
         flex-direction: row;
@@ -444,8 +441,6 @@
         font-size: var(--font-size-description);
         padding: 5px 0;
     }
-
-    /* Footer Logo and Branding */
 
     .footer-logo {
         display: flex;

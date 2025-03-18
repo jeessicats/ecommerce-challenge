@@ -170,7 +170,6 @@
       font-size: var(--font-size-body);
     }
   
-    /* Card 2 (Offers) */
     .special-card.offer-card {
       grid-area: offer;
       border-radius: 19px;
@@ -242,12 +241,10 @@
       font-size: var(--font-size-heading-lg);
     }
   
-    /* Ícone do coração no desktop */
     .heart-icon {
       width: 54px;
     }
   
-    /* Card 1 (Gift Card) */
     .special-card.gift-card {
       grid-area: gift-card; 
       border-radius: 42px;
@@ -255,28 +252,24 @@
       max-height: 700px;     
     }
   
-    /* Card 2 (Offers) */
     .special-card.offer-card {
       grid-area: offer;
       border-radius: 19px;
       max-width: 640px;
     }
   
-    /* Card 3 (Customization) */
     .special-card.customize-card {
       grid-area: customize;
       border-radius: 19px;
       max-width: 640px;
     }
   
-    /* Imagens dentro dos cards no desktop */
     .special-card img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
   
-    /* Conteúdo do Gift Card (título e texto) */
     .special-content.gift-card-content h3 {
       font-size: var(--font-size-heading-md);
       line-height: 1.2;
@@ -290,7 +283,6 @@
       font-size: var(--font-size-body);
     }
   
-    /* Conteúdo geral (outros cards) */
     .special-content h3 {
       font-size: var(--font-size-featured);
       margin: 0 24px 15px 24px; 
@@ -303,12 +295,10 @@
       font-size: var(--font-size-secondary);
     }
   
-    /* Ajuste de padding interno se quiser (ex: gift-card-card) */
     .gift-card-card .special-content {
       padding: 20px;
     }
   
-    /* Cards 2 e 3 (Offers e Customize) */
     .offer-card,
     .customize-card {
       display: flex;
