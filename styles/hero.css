@@ -78,8 +78,8 @@
     border-top: none;
 }
 
-/* Tablet: 768px to 1123px */
-@media (min-width: 768px) and (max-width: 1123px) {
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1169px) {
     #hero {
         min-height: auto;
     }
@@ -91,7 +91,7 @@
 }
 
 /* Desktop: 1124px and up */
-@media (min-width: 1124px) {
+@media (min-width: 1170px) {
     #hero {
         min-height: auto;
     }

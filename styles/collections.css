@@ -41,6 +41,12 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 90%;
     max-width: 220px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.collection-card:hover {
+    transform: scale(1.02);
 }
 
 .collection-card img {
@@ -70,7 +76,7 @@
 }
 
 /* Tablet screens */
-@media (min-width: 768px) and (max-width: 1123px) {
+@media (min-width: 768px) and (max-width: 1169px) {
     .collections-header h1 {
         font-size: 31px;
     }
@@ -97,7 +103,7 @@
 }
 
 /* Large screens */
-@media (min-width: 1124px) {
+@media (min-width: 1170px) {
 
     .collections-header h1 {
         font-size: var(--font-size-heading-lg);
