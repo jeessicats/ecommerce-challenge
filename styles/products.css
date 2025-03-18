@@ -158,8 +158,8 @@
 
 /* Hover effect */
 #explore-button:hover {
-    background-color: rgba(191, 139, 112, 0.9);
-    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-button-buy);
+    transform: scale(1.02);
 }
 
 /* Click effect */

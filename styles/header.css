@@ -299,7 +299,6 @@
         flex-direction: row;
         align-items: center;
         gap: 12px;
-        flex-wrap: nowrap;
         height: 27px;
         padding-top: 0;
         padding-left: 0;
