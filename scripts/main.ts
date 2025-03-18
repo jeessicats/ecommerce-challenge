@@ -164,10 +164,66 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Dots Testimonials Section navigation
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".testimonial-container") as HTMLElement;
+    const dotsContainer = document.getElementById("testimonial-dots") as HTMLElement;
+    let slides = document.querySelectorAll(".testimonial-slide");
+    let dots: HTMLSpanElement[] = [];
+    let index = 0;
 
+    function isMobile(): boolean {
+        return window.innerWidth < 768;
+    }
 
+    function getSlidesPerView(): number {
+        return isMobile() ? 1 : 2; // Mobile: 1 por vez, Desktop: 2 por vez
+    }
 
+    function updateDots(): void {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+        });
+    }
 
+    function updateSlider(): void {
+        let slideWidth = slides[0] ? (slides[0] as HTMLElement).offsetWidth : 0;
+        let translateX = -(index * slideWidth);
+        slider.style.transform = `translateX(${translateX}px)`;
+    }
+
+    function goToSlide(newIndex: number): void {
+        if (newIndex >= 0 && newIndex < dots.length) {
+            index = newIndex;
+            updateSlider();
+            updateDots();
+        }
+    }
+
+    function setupSlider(): void {
+        slides = document.querySelectorAll(".testimonial-slide");
+        dotsContainer.innerHTML = "";
+        let slidesPerView = getSlidesPerView();
+        let dotsCount = isMobile() ? 6 : 2; // Corrigindo o número de dots
+        dots = [];
+        
+        for (let i = 0; i < dotsCount; i++) {
+            let dot = document.createElement("span");
+            dot.classList.add("testimonial-dot");
+            if (i === 0) dot.classList.add("active");
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+            dot.addEventListener("click", () => goToSlide(i));
+        }
+
+        slides.forEach(slide => (slide as HTMLElement).style.flex = `0 0 ${100 / slidesPerView}%`);
+        updateSlider();
+        updateDots();
+    }
+
+    window.addEventListener("resize", setupSlider);
+    setupSlider();
+});
 
 // footer links for mobile
 

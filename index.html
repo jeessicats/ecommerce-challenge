@@ -481,11 +481,13 @@
         </header>
 
         <!-- Slider Wrapper -->
-        <div class="slider">
+        <div class="testimonial-slider">
 
-            <div class="slides">
+            <div class="testimonial-container">
 
-                <article class="testimonial-card first-card">
+                <div class="testimonial-slide">
+                    
+                    <article class="testimonial-card first-card">
                     <div class="testimonial-content">
                         <blockquote>
                             “Questo peluche è fantastico! La qualità del materiale è eccezionale e la sua 
@@ -530,9 +532,11 @@
                         </figcaption>
                     </div>
                 </article>
+                </div>
 
-                <!-- Three additional testimonials -->
-                <article class="testimonial-card fourth-card">
+                <div class="testimonial-slide">
+                    
+                    <article class="testimonial-card fourth-card">
                     <div class="testimonial-content">
                         <blockquote>
                             “Ho comprato questo peluche per mio figlio e lo adora! La qualità è eccellente e i colori sono bellissimi.”
@@ -578,28 +582,22 @@
                         </figcaption>
                     </div>
                 </article>
+                </div>
+                
 
             </div>
-
-            <!-- Dots Navigation-->
-            <div class="manual-navigation">
-                <input type="radio" name="dot" id="dot1" class="dot" checked>
-                <label for="dot1" class="manual-btn"></label>
-
-                <input type="radio" name="dot" id="dot2" class="dot">
-                <label for="dot2" class="manual-btn"></label>
-
-                <input type="radio" name="dot" id="dot3" class="dot">
-                <label for="dot3" class="manual-btn"></label>
-
-                <input type="radio" name="dot" id="dot4" class="dot">
-                <label for="dot4" class="manual-btn"></label>
-
-                <input type="radio" name="dot" id="dot5" class="dot">
-                <label for="dot5" class="manual-btn"></label>
-            </div>
-            
         </div>
+
+        <!-- Dots Navigation -->
+        <div id="testimonial-dots">
+            <span class="testimonial-dot active" ></span>
+            <span class="testimonial-dot" ></span>
+            <span class="testimonial-dot" ></span>
+            <span class="testimonial-dot" ></span>
+            <span class="testimonial-dot" ></span>
+            <span class="testimonial-dot" ></span>
+        </div>
+
 
     </section>
 
