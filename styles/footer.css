@@ -169,6 +169,56 @@
     margin-top: 10px;
 }
 
+.pop-up {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(41, 24, 15, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-content {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    cursor: pointer;
+    float: right;
+    font-size: 22px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+}
+
+.close-btn:hover {
+    color: var(--color-border-highlight); 
+}
+
+
+#pop-up-message {
+    font-size: var(--font-size-body);
+    margin-top: 10px;
+}
+
+/* Efeito para mensagens de sucesso e erro */
+.success {
+    color: var(--color-button-buy); 
+}
+
+.error {
+    color: var(--color-button-primary); 
+}
+
 /* Tablet Styles */
 @media (min-width: 770px) and (max-width: 1169px) {
     .footer-newsletter {
@@ -231,13 +281,11 @@
     }
 
     /* Footer Links */
-
     .footer-container {
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 10px 20px;
     }
-
     
     .footer-links { 
         padding: 20px 20px 30px;
@@ -247,7 +295,6 @@
         display: flex;
         flex-direction: row;
         gap: clamp(20px, calc(0.499vw + 15.8px), 40px);
-
     }
 
     .footer-category {
@@ -268,15 +315,12 @@
         flex-direction: column;
         gap: 5px;
         text-align: left;
-
     }
 
     .footer-category ul li a {
         font-size: var(--font-size-small);
         padding: 5px 0;
     }
-
-
 
     /* Footer Logo and Branding */
     .footer-logo {
@@ -297,11 +341,6 @@
         align-self: center;
         margin-right: 10px;
     }
-
-
-    
-
-    
 }
 
 /* Desktop Styles */

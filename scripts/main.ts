@@ -198,3 +198,75 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Capturar elementos do DOM
+const form = document.querySelector(".newsletter-form") as HTMLFormElement;
+const emailInput = document.querySelector("#newsletter-email") as HTMLInputElement;
+const popUp = document.querySelector("#pop-up") as HTMLElement;
+const popUpMessage = document.querySelector("#pop-up-message") as HTMLElement;
+const closeBtn = document.querySelector(".close-btn") as HTMLElement;
+
+// Função para validar e-mail
+function isValidEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Função para recuperar e-mails já cadastrados do localStorage
+function getSubscribedEmails(): string[] {
+    const storedEmails = localStorage.getItem("subscribedEmails");
+    return storedEmails ? JSON.parse(storedEmails) : [];
+}
+
+// Função para salvar um novo e-mail no localStorage
+function saveEmail(email: string) {
+    const emails = getSubscribedEmails();
+    emails.push(email);
+    localStorage.setItem("subscribedEmails", JSON.stringify(emails));
+}
+
+// Função para exibir o pop-up com estilos adequados
+function showPopUp(message: string, isSuccess: boolean) {
+    popUpMessage.textContent = message;
+    popUpMessage.classList.remove("success", "error"); // Remove classes antigas
+    popUpMessage.classList.add(isSuccess ? "success" : "error"); // Adiciona a classe correta
+    popUp.style.display = "flex";
+}
+
+// Evento de envio do formulário
+form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Evita o envio tradicional do formulário
+
+    const email = emailInput.value.trim();
+    const subscribedEmails = getSubscribedEmails(); // Obtém os e-mails já cadastrados
+
+    if (email === "") {
+        showPopUp("Errore: Inserisci la tua email!", false);
+        return;
+    }
+
+    if (!isValidEmail(email)) {
+        showPopUp("Errore: Inserisci un'e-mail valida!", false);
+        return;
+    }
+
+    if (subscribedEmails.includes(email)) {
+        showPopUp("Errore: Questo indirizzo email è già iscritto!", false);
+        return;
+    }
+
+    saveEmail(email); // Salva o novo e-mail na lista
+    showPopUp("Successo! Sei stato iscritto alla newsletter.", true);
+    emailInput.value = ""; // Limpa o campo de e-mail
+});
+
+// Fechar pop-up ao clicar no botão X
+closeBtn.addEventListener("click", () => {
+    popUp.style.display = "none";
+});
+
+// Fechar pop-up ao clicar fora dele
+window.addEventListener("click", (event) => {
+    if (event.target === popUp) {
+        popUp.style.display = "none";
+    }
+});
