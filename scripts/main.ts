@@ -165,3 +165,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
+
+
+// footer links for mobile
+
+document.addEventListener("DOMContentLoaded", () => {
+    const categories: NodeListOf<HTMLHeadingElement> = document.querySelectorAll(".footer-category h4");
+
+    categories.forEach((category) => {
+        category.addEventListener("click", () => {
+            const parent = category.parentElement as HTMLElement;
+            if (parent) {
+                parent.classList.toggle("active");
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const categories: NodeListOf<HTMLHeadingElement> = document.querySelectorAll(".footer-category h3");
+
+    categories.forEach((category) => {
+        category.addEventListener("click", () => {
+            const parent = category.parentElement as HTMLElement;
+            if (parent) {
+                parent.classList.toggle("active");
+            }
+        });
+    });
+});
+
+
