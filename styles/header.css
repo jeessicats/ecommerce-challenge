@@ -129,24 +129,42 @@
     color: var(--color-border-highlight);
 }
 
+.dropdown {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: medium;
+    color: #333;
+    cursor: pointer;
+}
+
+.dropdown::after {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
 .nav-icons {
-    display: none; /* Esconde os ícones por padrão */
-    flex-direction: row; /* Alinha os ícones em linha */
+    display: none; 
+    flex-direction: row; 
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Espaço entre os ícones */
+    gap: 15px; 
     width: 100%;
     padding-top: 15px;
 }
 
-/* Exibir os ícones quando o menu for ativado */
 .nav-links.active .nav-icons {
     display: flex;
 }
 
 /* Estilo dos ícones */
 .nav-icons .icon img {
-    height: 24px; /* Ajuste o tamanho conforme necessário */
+    height: 24px; 
     transition: transform 0.3s ease-in-out;
 }
 
@@ -295,7 +313,7 @@
     
     /* Icons and Button */
     .nav-icons {
-        display: flex;
+        display: inline-flex;
         flex-direction: row;
         align-items: center;
         gap: 12px;
